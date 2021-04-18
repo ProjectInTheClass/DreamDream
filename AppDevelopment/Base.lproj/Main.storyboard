@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="38g-ce-PM6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,37 +8,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SettingView-->
         <scene sceneID="xNC-Nu-uWO">
             <objects>
-                <viewController id="5Z6-OU-qyN" sceneMemberID="viewController">
+                <viewController title="SettingView" id="5Z6-OU-qyN" customClass="SettingViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dp4-5o-7vk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2Gl-Gv-iNo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Tae-Qv-9a1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9h-Ic-fyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="72"/>
+            <point key="canvasLocation" x="1445" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="KwO-5P-7uh">
             <objects>
-                <viewController id="Xo4-FX-eds" sceneMemberID="viewController">
+                <viewController id="Xo4-FX-eds" customClass="ContentsViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbW-a8-eRb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="V8q-IV-hld"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="S4G-iK-rPg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WR-4T-vS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="72"/>
+            <point key="canvasLocation" x="1445" y="942"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,6 +63,7 @@
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="RhI-4j-aPb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Uti-Mf-7y9">
@@ -69,7 +72,26 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="52" y="72"/>
+            <point key="canvasLocation" x="1445" y="-572"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pdI-bW-V1y">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="38g-ce-PM6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c9R-L5-n8z">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="H2i-Uq-s3m"/>
+                        <segue destination="5Z6-OU-qyN" kind="relationship" relationship="viewControllers" id="UKr-Ay-ZVk"/>
+                        <segue destination="Xo4-FX-eds" kind="relationship" relationship="viewControllers" id="HCk-X3-Vjy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvb-oK-s8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>
