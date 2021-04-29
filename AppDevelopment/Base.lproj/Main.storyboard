@@ -8,6 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--testStoryboard-->
+        <scene sceneID="w91-nr-2A2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="testStoryboard" id="PxD-xk-NgC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yIi-GH-SlA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhH-hv-WmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011" y="-419"/>
+        </scene>
         <!--SettingView-->
         <scene sceneID="xNC-Nu-uWO">
             <objects>
@@ -40,53 +50,20 @@
             </objects>
             <point key="canvasLocation" x="1445" y="942"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-fc-J0C">
-                                <rect key="frame" x="166" y="365" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
-                        </connections>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RhI-4j-aPb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="Uti-Mf-7y9">
-                    <connections>
-                        <action selector="swipeToRight:" destination="BYZ-38-t0r" id="4Jv-Va-TIT"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="1445" y="-572"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pdI-bW-V1y">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="38g-ce-PM6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c9R-L5-n8z">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="H2i-Uq-s3m"/>
                         <segue destination="5Z6-OU-qyN" kind="relationship" relationship="viewControllers" id="UKr-Ay-ZVk"/>
                         <segue destination="Xo4-FX-eds" kind="relationship" relationship="viewControllers" id="HCk-X3-Vjy"/>
+                        <segue destination="PxD-xk-NgC" kind="relationship" relationship="viewControllers" id="gnp-QX-pQa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvb-oK-s8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

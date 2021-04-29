@@ -8,9 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     @IBAction func swipeToRight(_ sender: Any) {
-        var direction: UISwipeGestureRecognizer.Direction
+        let direction: UISwipeGestureRecognizer.Direction
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailInfo = segue.destination as? DetailViewController{
+            detailInfo.stringTest = "안녕하세용 기모찌!"
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
