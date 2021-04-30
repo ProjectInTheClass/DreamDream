@@ -16,7 +16,7 @@
 		7F94E78D261F029C0006720B /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F94E78C261F029C0006720B /* temp.swift */; };
 		7FAC7E72263BEA85002C6922 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC7E71263BEA85002C6922 /* SettingViewController.swift */; };
 		7FAC7E75263BEB07002C6922 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAC7E74263BEB07002C6922 /* SettingView.storyboard */; };
-		ED7C2DB4261F4C510018AE0A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ED7C2DB3261F4C510018AE0A /* README.md */; };
+		7FAC7E80263BF202002C6922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7FAC7E7F263BF202002C6922 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		7F94E78C261F029C0006720B /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		7FAC7E71263BEA85002C6922 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		7FAC7E74263BEB07002C6922 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
-		ED7C2DB3261F4C510018AE0A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7FAC7E7F263BF202002C6922 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 		7F94E76A261EFE5F0006720B = {
 			isa = PBXGroup;
 			children = (
-				ED7C2DB3261F4C510018AE0A /* README.md */,
+				7FAC7E7F263BF202002C6922 /* README.md */,
 				7F94E775261EFE5F0006720B /* AppDevelopment */,
 				7F94E774261EFE5F0006720B /* Products */,
 			);
@@ -139,7 +139,7 @@
 				7FAC7E75263BEB07002C6922 /* SettingView.storyboard in Resources */,
 				7F94E783261EFE640006720B /* LaunchScreen.storyboard in Resources */,
 				7F94E780261EFE640006720B /* Assets.xcassets in Resources */,
-				ED7C2DB4261F4C510018AE0A /* README.md in Resources */,
+				7FAC7E80263BF202002C6922 /* README.md in Resources */,
 				7F94E77E261EFE5F0006720B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DreamDream/Info.plist;
+				INFOPLIST_FILE = AppDevelopment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,7 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DreamDream/Info.plist;
+				INFOPLIST_FILE = AppDevelopment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
