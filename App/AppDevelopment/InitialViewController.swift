@@ -9,8 +9,8 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    @IBAction func swipeToRight(_ sender: Any) {
-        var direction: UISwipeGestureRecognizer.Direction
+    @IBAction func SegueSwipeUp(sender: UISwipeGestureRecognizer) {
+        self.performSegue(withIdentifier: "toSettings", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
