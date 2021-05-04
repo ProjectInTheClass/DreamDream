@@ -1,20 +1,21 @@
 //
 //  ViewController.swift
-//  toy
+//  Toy_swipe
 //
-//  Created by Jeon jaeil on 2021/04/22.
+//  Created by Jeon jaeil on 2021/05/04.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imageDreamIcon: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let image = UIImage(named: "DreamIcon")
-        imageDreamIcon.image = image
     }
+    @IBAction func swipeUp(sender: UISwipeGestureRecognizer){
+        self.performSegue(withIdentifier: "segueSwipeUp", sender: self)
+    }
+    
 }
+
