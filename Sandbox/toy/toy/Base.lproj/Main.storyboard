@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,51 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C7J-iZ-ley">
-                                <rect key="frame" x="184" y="375" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Y9j-PR-RLm"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ey2-ja-8tM">
-                                <rect key="frame" x="184" y="433" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PMT-MM-T3D"/>
-                                </connections>
-                            </switch>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kl-ud-JOp">
-                                <rect key="frame" x="87" y="138" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zJ1-QP-uej">
-                                <rect key="frame" x="184" y="490" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rdZ-ak-SxO"/>
-                                </connections>
-                            </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVo-Ko-pMt">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.60688677226027399" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wVo-Ko-pMt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DMn-mP-LAg"/>
+                            <constraint firstItem="wVo-Ko-pMt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="DTH-Xc-U1r"/>
+                            <constraint firstItem="wVo-Ko-pMt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fXA-so-EXL"/>
+                            <constraint firstItem="wVo-Ko-pMt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="vHf-OH-uqv"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueSwitch" destination="zJ1-QP-uej" id="HjS-Yl-57p"/>
-                        <outlet property="colorView" destination="7kl-ud-JOp" id="1O1-cB-NNb"/>
-                        <outlet property="greenSwitch" destination="ey2-ja-8tM" id="YNK-w6-2s8"/>
-                        <outlet property="redSwitch" destination="C7J-iZ-ley" id="M5B-Mz-i2U"/>
+                        <outlet property="DreamIcon" destination="wVo-Ko-pMt" id="4t4-L8-pIq"/>
+                        <outlet property="imageDreamIcon" destination="wVo-Ko-pMt" id="PSa-Kq-wGm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="86"/>
+            <point key="canvasLocation" x="13.043478260869566" y="85.714285714285708"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
