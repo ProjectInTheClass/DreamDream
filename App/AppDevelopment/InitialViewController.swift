@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
 
     @IBAction func swipeToRight(_ sender: Any) {
         var direction: UISwipeGestureRecognizer.Direction

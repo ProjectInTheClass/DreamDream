@@ -1,13 +1,13 @@
 //
-//  SettingViewController.swift
+//  ContentViewController.swift
 //  DreamDream
 //
-//  Created by 원석 on 2021/04/30.
+//  Created by 원석 on 2021/05/04.
 //
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class ContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
