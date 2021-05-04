@@ -20,12 +20,8 @@
 		7F94E780261EFE640006720B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F94E77F261EFE640006720B /* Assets.xcassets */; };
 		7F94E783261EFE640006720B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F94E781261EFE640006720B /* LaunchScreen.storyboard */; };
 		7F94E78D261F029C0006720B /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F94E78C261F029C0006720B /* temp.swift */; };
-<<<<<<< HEAD
 		7FAC7E75263BEB07002C6922 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAC7E74263BEB07002C6922 /* DetailView.storyboard */; };
 		7FAC7E80263BF202002C6922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7FAC7E7F263BF202002C6922 /* README.md */; };
-=======
-		EDC0DD8526416BCA0034BD5D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EDC0DD8426416BC90034BD5D /* README.md */; };
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +40,8 @@
 		7F94E782261EFE640006720B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F94E784261EFE640006720B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F94E78C261F029C0006720B /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		7FAC7E74263BEB07002C6922 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		7FAC7E7F263BF202002C6922 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-=======
-		EDC0DD8426416BC90034BD5D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +58,7 @@
 		7F94E76A261EFE5F0006720B = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				7FAC7E7F263BF202002C6922 /* README.md */,
-=======
-				EDC0DD8426416BC90034BD5D /* README.md */,
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 				7F94E775261EFE5F0006720B /* AppDevelopment */,
 				7F94E774261EFE5F0006720B /* Products */,
 			);
@@ -92,7 +80,6 @@
 				7F94E77A261EFE5F0006720B /* InitialViewController.swift */,
 				7F94E78C261F029C0006720B /* temp.swift */,
 				7F94E77C261EFE5F0006720B /* Main.storyboard */,
-<<<<<<< HEAD
 				7FAC7E74263BEB07002C6922 /* DetailView.storyboard */,
 				7F2A63DE26412DEF0074C9F8 /* UserSetting.storyboard */,
 				7F2A63E126412E2E0074C9F8 /* UserSettingViewController.swift */,
@@ -100,8 +87,6 @@
 				7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */,
 				7F2A63CD26412C500074C9F8 /* ContentLibrary.storyboard */,
 				7F2A63D426412CE80074C9F8 /* ContentViewController.swift */,
-=======
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 				7F94E77F261EFE640006720B /* Assets.xcassets */,
 				7F94E781261EFE640006720B /* LaunchScreen.storyboard */,
 				7F94E784261EFE640006720B /* Info.plist */,
@@ -166,7 +151,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				7F2A63CE26412C500074C9F8 /* ContentLibrary.storyboard in Resources */,
 				7FAC7E75263BEB07002C6922 /* DetailView.storyboard in Resources */,
 				7F2A63DF26412DEF0074C9F8 /* UserSetting.storyboard in Resources */,
@@ -174,11 +158,6 @@
 				7F94E780261EFE640006720B /* Assets.xcassets in Resources */,
 				7F2A63D926412D500074C9F8 /* SleepAnalysys.storyboard in Resources */,
 				7FAC7E80263BF202002C6922 /* README.md in Resources */,
-=======
-				7F94E783261EFE640006720B /* LaunchScreen.storyboard in Resources */,
-				7F94E780261EFE640006720B /* Assets.xcassets in Resources */,
-				EDC0DD8526416BCA0034BD5D /* README.md in Resources */,
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 				7F94E77E261EFE5F0006720B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,12 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				7F2A63DC26412D890074C9F8 /* SleepAnalysysViewController.swift in Sources */,
 				7F94E77B261EFE5F0006720B /* InitialViewController.swift in Sources */,
-=======
-				7F94E77B261EFE5F0006720B /* ViewController.swift in Sources */,
->>>>>>> dca70b47e13bda340bca0e61b084355918a87844
 				7F94E777261EFE5F0006720B /* AppDelegate.swift in Sources */,
 				7F94E779261EFE5F0006720B /* SceneDelegate.swift in Sources */,
 				7F2A63D526412CE80074C9F8 /* ContentViewController.swift in Sources */,
