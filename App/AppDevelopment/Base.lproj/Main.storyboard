@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,31 +15,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DreamIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UZK-ep-Loy">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
+                                <rect key="frame" x="143" y="384" width="128" height="128"/>
+                                <state key="normal" image="DreamIcon"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.21156284204685369" green="0.067484581100680632" blue="0.38444557801015222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Der-lD-xYu"/>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IG5-8R-T16"/>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eFe-Vy-2a6"/>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="h9e-Yr-D3r"/>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="296" id="hZa-La-qmY"/>
-                            <constraint firstItem="UZK-ep-Loy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tEa-4m-W7h"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6FT-gB-ACi"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6K1-ne-pyQ"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="GlG-oz-Xqu"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="ira-Qa-ksj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
+                    <connections>
+                        <outlet property="dreamIconButton" destination="RMj-cn-SUJ" id="MO9-gr-p7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="Uti-Mf-7y9">
                     <connections>
-                        <action selector="swipeToRight:" destination="BYZ-38-t0r" id="4Jv-Va-TIT"/>
+                        <action selector="SegueSwipeUpWithSender:" destination="BYZ-38-t0r" id="JRg-gg-JAr"/>
                         <segue destination="DYU-pI-R2G" kind="show" identifier="toSettings" id="xQu-YV-oRc"/>
                     </connections>
                 </swipeGestureRecognizer>
@@ -60,11 +61,12 @@
         <!--Navigation Controller-->
         <scene sceneID="k0P-zS-yTP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EzG-xa-d3O" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EzG-xa-d3O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j4d-82-8DC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" id="j4d-82-8DC">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.211562842" green="0.067484581099999996" blue="0.38444557800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.211562842" green="0.067484581099999996" blue="0.38444557800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -77,9 +79,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DreamIcon" width="535" height="535"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="DreamIcon" width="267.5" height="267.5"/>
     </resources>
 </document>
