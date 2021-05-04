@@ -9,6 +9,36 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="xNC-Nu-uWO">
+            <objects>
+                <viewController id="5Z6-OU-qyN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dp4-5o-7vk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2Gl-Gv-iNo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9h-Ic-fyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="72"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KwO-5P-7uh">
+            <objects>
+                <viewController id="Xo4-FX-eds" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZbW-a8-eRb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V8q-IV-hld"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0WR-4T-vS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="72"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,21 +66,10 @@
                 <swipeGestureRecognizer direction="right" id="Uti-Mf-7y9">
                     <connections>
                         <action selector="swipeToRight:" destination="BYZ-38-t0r" id="4Jv-Va-TIT"/>
-                        <segue destination="DYU-pI-R2G" kind="show" id="xQu-YV-oRc"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="52" y="72"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="hPN-8X-ei4">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="settingView" id="DYU-pI-R2G" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="O5t-Q8-0KQ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ4-xp-2w2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="983" y="72"/>
         </scene>
     </scenes>
     <resources>
