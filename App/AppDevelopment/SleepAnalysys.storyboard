@@ -4,45 +4,58 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
         <scene sceneID="Iyr-o9-lRd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xKP-xk-4Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="U02-Gr-Lzg" customClass="SleepAnalysysViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVx-ki-yV0" userLabel="SleepAnalize">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mia-Ar-ofe">
-                                <rect key="frame" x="169" y="359" width="46" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="cJF-4m-zIz">
+                                <rect key="frame" x="-14" y="55" width="442" height="786"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smu-QO-b1q">
+                                <rect key="frame" x="20" y="44" width="64" height="64"/>
+                                <state key="normal" title="Button" image="DreamIcon"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수면분석" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-LQ-6hz">
-                                <rect key="frame" x="171" y="293" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면 분석" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-HA-Si6">
+                                <rect key="frame" x="155" y="59" width="104" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="moq-dB-Xgc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cJF-4m-zIz" firstAttribute="leading" secondItem="eVx-ki-yV0" secondAttribute="leadingMargin" constant="-34" id="HTP-kM-k5U"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="smu-QO-b1q" secondAttribute="trailing" constant="330" id="drz-0t-IA0"/>
+                            <constraint firstItem="cJF-4m-zIz" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="fBi-tw-cg8"/>
+                            <constraint firstItem="smu-QO-b1q" firstAttribute="leading" secondItem="eVx-ki-yV0" secondAttribute="leadingMargin" id="fHi-L2-fg6"/>
+                            <constraint firstItem="smu-QO-b1q" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" id="n99-Aj-kxz"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="bottom" secondItem="smu-QO-b1q" secondAttribute="bottom" constant="754" id="oDX-nh-UMa"/>
+                            <constraint firstItem="cJF-4m-zIz" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="11" id="vKd-aX-ZzZ"/>
+                            <constraint firstItem="cJF-4m-zIz" firstAttribute="centerY" secondItem="eVx-ki-yV0" secondAttribute="centerY" id="vY0-1S-kJo"/>
+                            <constraint firstItem="zfM-HA-Si6" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="yNB-xe-uw0"/>
+                            <constraint firstItem="zfM-HA-Si6" firstAttribute="centerY" secondItem="eVx-ki-yV0" secondAttribute="centerY" constant="-372" id="yNc-L3-Cnd"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gwQ-Uy-Rs7"/>
                     <navigationItem key="navigationItem" id="jeN-BS-JnQ"/>
+                    <connections>
+                        <outlet property="homeButton" destination="smu-QO-b1q" id="179-eF-7cf"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKP-xk-4Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2043" y="-703"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="BackGroundImage" width="270" height="480"/>
+        <image name="DreamIcon" width="267.5" height="267.5"/>
     </resources>
 </document>
