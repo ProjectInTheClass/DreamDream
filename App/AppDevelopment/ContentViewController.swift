@@ -9,6 +9,8 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
+    @IBOutlet weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

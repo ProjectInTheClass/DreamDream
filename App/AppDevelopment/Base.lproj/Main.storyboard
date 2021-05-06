@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EzG-xa-d3O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,19 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-sV-Xxe">
+                                <rect key="frame" x="-14" y="55" width="442" height="786"/>
+                            </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
                                 <rect key="frame" x="143" y="384" width="128" height="128"/>
-                                <state key="normal" image="DreamIcon"/>
+                                <state key="normal" backgroundImage="DreamIcon"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.21156284204685369" green="0.067484581100680632" blue="0.38444557801015222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6FT-gB-ACi"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6K1-ne-pyQ"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="GlG-oz-Xqu"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="ira-Qa-ksj"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-34" id="2sl-FC-Got"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="RMj-cn-SUJ" secondAttribute="centerX" id="331-TX-hQF"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmC-aT-V5t"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxO-dr-1Ec"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="RMj-cn-SUJ" secondAttribute="centerY" id="Q4B-B2-9d3"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="Sac-F8-L12"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPk-70-919"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k6N-29-prP"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="m9G-lO-1MB"/>
+                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="yab-DA-lB4"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
@@ -42,7 +50,7 @@
                 <swipeGestureRecognizer direction="up" id="Uti-Mf-7y9">
                     <connections>
                         <action selector="SegueSwipeUpWithSender:" destination="BYZ-38-t0r" id="JRg-gg-JAr"/>
-                        <segue destination="DYU-pI-R2G" kind="show" identifier="toSettings" id="xQu-YV-oRc"/>
+                        <segue destination="DYU-pI-R2G" kind="presentation" identifier="toSettings" id="xQu-YV-oRc"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -58,27 +66,9 @@
             </objects>
             <point key="canvasLocation" x="1696" y="72"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="k0P-zS-yTP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EzG-xa-d3O" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" id="j4d-82-8DC">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.211562842" green="0.067484581099999996" blue="0.38444557800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.211562842" green="0.067484581099999996" blue="0.38444557800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e25-dm-FOE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pH3-Sf-yBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="71.651785714285708"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="BackGroundImage" width="270" height="480"/>
         <image name="DreamIcon" width="267.5" height="267.5"/>
     </resources>
 </document>

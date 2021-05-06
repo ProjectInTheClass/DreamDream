@@ -4,11 +4,10 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Title-->
         <scene sceneID="BeX-VL-WUi">
             <objects>
                 <viewController id="PtZ-mY-Ljp" customClass="UserSettingViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,27 +15,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserSetting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO7-Be-Ieq">
-                                <rect key="frame" x="151" y="221" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="blj-iY-Qoi">
+                                <rect key="frame" x="-14" y="55" width="442" height="786"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdH-TH-7sY">
+                                <rect key="frame" x="20" y="44" width="64" height="64"/>
+                                <state key="normal" title="Button" image="DreamIcon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-BF-aNS">
+                                <rect key="frame" x="143" y="59" width="128" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qm7-zE-ZUp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qm7-zE-ZUp" firstAttribute="trailing" secondItem="IdH-TH-7sY" secondAttribute="trailing" constant="330" id="8xD-9I-Uat"/>
+                            <constraint firstItem="blj-iY-Qoi" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" id="CP1-Jn-OeM"/>
+                            <constraint firstItem="IdH-TH-7sY" firstAttribute="top" secondItem="qm7-zE-ZUp" secondAttribute="top" id="Dw1-mA-FCW"/>
+                            <constraint firstItem="blj-iY-Qoi" firstAttribute="top" secondItem="qm7-zE-ZUp" secondAttribute="top" constant="11" id="JpZ-2G-m2F"/>
+                            <constraint firstItem="blj-iY-Qoi" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="Lcf-h2-C9c"/>
+                            <constraint firstItem="IdH-TH-7sY" firstAttribute="leading" secondItem="9u4-2P-jX3" secondAttribute="leadingMargin" id="THO-b6-VCY"/>
+                            <constraint firstItem="qm7-zE-ZUp" firstAttribute="bottom" secondItem="IdH-TH-7sY" secondAttribute="bottom" constant="754" id="ayX-fl-qHS"/>
+                            <constraint firstItem="gYs-BF-aNS" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="dH1-7r-VL2"/>
+                            <constraint firstItem="blj-iY-Qoi" firstAttribute="leading" secondItem="9u4-2P-jX3" secondAttribute="leadingMargin" constant="-34" id="lHf-dV-lc1"/>
+                            <constraint firstItem="blj-iY-Qoi" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="oEr-jW-2ik"/>
+                            <constraint firstItem="gYs-BF-aNS" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" constant="-372" id="wAs-dP-aob"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="5AQ-xh-bmJ"/>
+                    <navigationItem key="navigationItem" title="Title" id="U6o-sP-Whm"/>
+                    <connections>
+                        <outlet property="homeButton" destination="IdH-TH-7sY" id="mBy-qw-Jle"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-H4-ga8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2043" y="74"/>
+            <point key="canvasLocation" x="-2043.4782608695655" y="73.660714285714278"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="BackGroundImage" width="270" height="480"/>
+        <image name="DreamIcon" width="267.5" height="267.5"/>
     </resources>
 </document>
