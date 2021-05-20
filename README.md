@@ -32,4 +32,4 @@ HealthKit 기본 기능에 있는 잠자리에 들어야 하는 시간을 알려
 
 
 
-by JeonBest, pupafafa, 7777qkrdud809
+by JeonBest, pupafafa
