@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import HealthKit
 class SleepAnalysysViewController: UIViewController {
 
     @IBOutlet weak var homeButton: UIButton!
