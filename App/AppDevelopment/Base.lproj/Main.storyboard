@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,24 +19,53 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-sV-Xxe">
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                             </imageView>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
-                                <rect key="frame" x="143" y="384" width="128" height="128"/>
-                                <state key="normal" backgroundImage="DreamIcon"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
+                                <rect key="frame" x="82" y="226" width="250" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-sW-eVA">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="33.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="bxc-I2-7BC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 설정 시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-ds-3ch">
+                                        <rect key="frame" x="0.0" y="70.5" width="250" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
+                                        <rect key="frame" x="0.0" y="136.5" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RMj-cn-SUJ" secondAttribute="height" multiplier="1:1" id="T2S-Lw-3P5"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="DreamIcon"/>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34p-ZD-KQ5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa5-lb-BPB">
+                                        <rect key="frame" x="0.0" y="423.5" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-34" id="2sl-FC-Got"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="RMj-cn-SUJ" secondAttribute="centerX" id="331-TX-hQF"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmC-aT-V5t"/>
+                            <constraint firstItem="d1z-xD-rK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H79-74-ePE"/>
+                            <constraint firstItem="d1z-xD-rK4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ing-Fs-vBM"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxO-dr-1Ec"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="RMj-cn-SUJ" secondAttribute="centerY" id="Q4B-B2-9d3"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="Sac-F8-L12"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPk-70-919"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k6N-29-prP"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="m9G-lO-1MB"/>
-                            <constraint firstItem="RMj-cn-SUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="yab-DA-lB4"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
@@ -43,6 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
                     <connections>
+                        <outlet property="currentTimeLabel" destination="2iE-sW-eVA" id="Cem-5R-iOE"/>
+                        <outlet property="displayTimeLabel" destination="Sa5-lb-BPB" id="FII-bi-ok3"/>
                         <outlet property="dreamIconButton" destination="RMj-cn-SUJ" id="MO9-gr-p7u"/>
                     </connections>
                 </viewController>
@@ -70,5 +102,11 @@
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
         <image name="DreamIcon" width="267.5" height="267.5"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
