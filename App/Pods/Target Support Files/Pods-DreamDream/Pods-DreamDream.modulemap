@@ -1,0 +1,6 @@
+framework module Pods_DreamDream {
+  umbrella header "Pods-DreamDream-umbrella.h"
+
+  export *
+  module * { export * }
+}

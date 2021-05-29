@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CjS-oS-Vbd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Initial View Controller-->
+        <!--홈화면-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,28 +19,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-sV-Xxe">
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
-                                <rect key="frame" x="82" y="226" width="250" height="444"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
+                                <rect key="frame" x="30" y="283.5" width="354" height="329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-sW-eVA">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="33.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="bxc-I2-7BC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="111" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 설정 시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-ds-3ch">
-                                        <rect key="frame" x="0.0" y="70.5" width="250" height="29"/>
+                                        <rect key="frame" x="109.5" y="85.5" width="135.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
-                                        <rect key="frame" x="0.0" y="136.5" width="250" height="250"/>
+                                        <rect key="frame" x="127" y="161.5" width="100" height="100"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="0Hj-hR-Mv4"/>
                                             <constraint firstAttribute="width" secondItem="RMj-cn-SUJ" secondAttribute="height" multiplier="1:1" id="T2S-Lw-3P5"/>
+                                            <constraint firstAttribute="width" constant="100" id="jbm-Fh-98O"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="DreamIcon"/>
                                         <connections>
@@ -48,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa5-lb-BPB">
-                                        <rect key="frame" x="0.0" y="423.5" width="250" height="20.5"/>
+                                        <rect key="frame" x="141.5" y="308.5" width="71" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,18 +58,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1z-xD-rK4" secondAttribute="trailing" constant="30" id="0l2-ym-Nb7"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-34" id="2sl-FC-Got"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmC-aT-V5t"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H79-74-ePE"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ing-Fs-vBM"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxO-dr-1Ec"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="Sac-F8-L12"/>
+                            <constraint firstItem="d1z-xD-rK4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="eHR-h4-dD1"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPk-70-919"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="홈화면" badgeValue="오빠 여기야!" id="ki8-cd-JUk"/>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
                     <connections>
                         <outlet property="currentTimeLabel" destination="2iE-sW-eVA" id="Cem-5R-iOE"/>
@@ -82,26 +84,69 @@
                 <swipeGestureRecognizer direction="up" id="Uti-Mf-7y9">
                     <connections>
                         <action selector="SegueSwipeUpWithSender:" destination="BYZ-38-t0r" id="JRg-gg-JAr"/>
-                        <segue destination="DYU-pI-R2G" kind="presentation" identifier="toSettings" id="xQu-YV-oRc"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="960.86956521739137" y="71.651785714285708"/>
+            <point key="canvasLocation" x="-2188" y="-1122"/>
         </scene>
-        <!--DetailView-->
-        <scene sceneID="hPN-8X-ei4">
+        <!--ContentLibrary-->
+        <scene sceneID="J8V-2c-U9q">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="settingView" storyboardName="DetailView" id="DYU-pI-R2G" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="O5t-Q8-0KQ"/>
+                <viewControllerPlaceholder storyboardName="ContentLibrary" id="LDl-hC-GYX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sm6-92-dRT"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ4-xp-2w2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUD-5R-thB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="72"/>
+            <point key="canvasLocation" x="-2188" y="-599"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KJR-cS-Hou">
+            <objects>
+                <tabBarController storyboardIdentifier="settingView" id="CjS-oS-Vbd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="BackGroundImage" id="gCo-tn-EzR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="opaqueSeparatorColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kvJ-cN-rpc"/>
+                        <segue destination="LDl-hC-GYX" kind="relationship" relationship="viewControllers" id="gvM-Ny-mwL"/>
+                        <segue destination="kiv-rS-D7o" kind="relationship" relationship="viewControllers" id="4N8-sl-Uqo"/>
+                        <segue destination="hXC-4u-VEo" kind="relationship" relationship="viewControllers" id="oJv-iz-yhW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7b-df-vzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3470" y="-510"/>
+        </scene>
+        <!--SleepAnalysys-->
+        <scene sceneID="yMW-tN-WQQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SleepAnalysys" id="kiv-rS-D7o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wAZ-5C-uf4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNb-0P-Kq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2191" y="-435"/>
+        </scene>
+        <!--UserSetting-->
+        <scene sceneID="RFm-7g-Ear">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserSetting" id="hXC-4u-VEo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZkU-Gk-KSW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQP-HS-vLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2180" y="-295"/>
         </scene>
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
         <image name="DreamIcon" width="267.5" height="267.5"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

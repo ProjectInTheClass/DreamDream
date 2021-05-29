@@ -19,6 +19,7 @@ class InitialViewController: UIViewController {
 
     @IBOutlet weak var currentTimeLabel: UILabel!
     override func viewDidLoad() {
+
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "HH:mm:ss"
@@ -27,7 +28,6 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        
         
     }
     @IBAction func startButtonTapped(_ sender: Any) {
