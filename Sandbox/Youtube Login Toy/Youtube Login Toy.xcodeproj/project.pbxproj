@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E8164614F8E26D1B05817B4 /* Pods_Youtube_Login_Toy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742A000A296BAF76E3748387 /* Pods_Youtube_Login_Toy.framework */; };
 		ED395C3E264E687D0043AB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED395C3D264E687D0043AB70 /* AppDelegate.swift */; };
 		ED395C40264E687D0043AB70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED395C3F264E687D0043AB70 /* SceneDelegate.swift */; };
 		ED395C42264E687D0043AB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED395C41264E687D0043AB70 /* ViewController.swift */; };
 		ED395C45264E687D0043AB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED395C43264E687D0043AB70 /* Main.storyboard */; };
 		ED395C47264E68800043AB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED395C46264E68800043AB70 /* Assets.xcassets */; };
 		ED395C4A264E68800043AB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED395C48264E68800043AB70 /* LaunchScreen.storyboard */; };
+		EDAF8F47265FA0D900996A40 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8F46265FA0D900996A40 /* Utilities.swift */; };
+		EDAF8F49265FA0FD00996A40 /* AVPlayerViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8F48265FA0FD00996A40 /* AVPlayerViewControllerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C941BD33E7DD858F0CD112 /* Pods-Youtube Login Toy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Login Toy.release.xcconfig"; path = "Target Support Files/Pods-Youtube Login Toy/Pods-Youtube Login Toy.release.xcconfig"; sourceTree = "<group>"; };
+		742A000A296BAF76E3748387 /* Pods_Youtube_Login_Toy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Login_Toy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED395C3A264E687D0043AB70 /* Youtube Login Toy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Login Toy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED395C3D264E687D0043AB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED395C3F264E687D0043AB70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		ED395C46264E68800043AB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED395C49264E68800043AB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED395C4B264E68800043AB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDAF8F46265FA0D900996A40 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		EDAF8F48265FA0FD00996A40 /* AVPlayerViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewControllerManager.swift; sourceTree = "<group>"; };
+		FB6D7AB0B2B0114C97EA55BD /* Pods-Youtube Login Toy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Login Toy.debug.xcconfig"; path = "Target Support Files/Pods-Youtube Login Toy/Pods-Youtube Login Toy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8164614F8E26D1B05817B4 /* Pods_Youtube_Login_Toy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				ED395C3C264E687D0043AB70 /* Youtube Login Toy */,
 				ED395C3B264E687D0043AB70 /* Products */,
+				FC08BA24945F428A2C30C0EB /* Pods */,
+				F09BC73537985C9F9259033C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +74,27 @@
 				ED395C46264E68800043AB70 /* Assets.xcassets */,
 				ED395C48264E68800043AB70 /* LaunchScreen.storyboard */,
 				ED395C4B264E68800043AB70 /* Info.plist */,
+				EDAF8F46265FA0D900996A40 /* Utilities.swift */,
+				EDAF8F48265FA0FD00996A40 /* AVPlayerViewControllerManager.swift */,
 			);
 			path = "Youtube Login Toy";
+			sourceTree = "<group>";
+		};
+		F09BC73537985C9F9259033C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				742A000A296BAF76E3748387 /* Pods_Youtube_Login_Toy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC08BA24945F428A2C30C0EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB6D7AB0B2B0114C97EA55BD /* Pods-Youtube Login Toy.debug.xcconfig */,
+				44C941BD33E7DD858F0CD112 /* Pods-Youtube Login Toy.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED395C4E264E68800043AB70 /* Build configuration list for PBXNativeTarget "Youtube Login Toy" */;
 			buildPhases = (
+				32F03EB12EF46D53ADAA4520 /* [CP] Check Pods Manifest.lock */,
 				ED395C36264E687D0043AB70 /* Sources */,
 				ED395C37264E687D0043AB70 /* Frameworks */,
 				ED395C38264E687D0043AB70 /* Resources */,
+				D1BE5647B94998E92D4D5C9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +164,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32F03EB12EF46D53ADAA4520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Youtube Login Toy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BE5647B94998E92D4D5C9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube Login Toy/Pods-Youtube Login Toy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube Login Toy/Pods-Youtube Login Toy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Youtube Login Toy/Pods-Youtube Login Toy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED395C36264E687D0043AB70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +213,8 @@
 			files = (
 				ED395C42264E687D0043AB70 /* ViewController.swift in Sources */,
 				ED395C3E264E687D0043AB70 /* AppDelegate.swift in Sources */,
+				EDAF8F49265FA0FD00996A40 /* AVPlayerViewControllerManager.swift in Sources */,
+				EDAF8F47265FA0D900996A40 /* Utilities.swift in Sources */,
 				ED395C40264E687D0043AB70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +359,7 @@
 		};
 		ED395C4F264E68800043AB70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB6D7AB0B2B0114C97EA55BD /* Pods-Youtube Login Toy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +379,7 @@
 		};
 		ED395C50264E68800043AB70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C941BD33E7DD858F0CD112 /* Pods-Youtube Login Toy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
