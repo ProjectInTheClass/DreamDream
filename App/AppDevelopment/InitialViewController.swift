@@ -23,6 +23,7 @@ class InitialViewController: UIViewController {
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "HH:mm:ss"
+        format.locale = Locale(identifier: "ko_KR")
         let formattedDate = format.string(from: date)
         currentTimeLabel.text = formattedDate
         super.viewDidLoad()

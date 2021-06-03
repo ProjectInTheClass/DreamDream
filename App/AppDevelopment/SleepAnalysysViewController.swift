@@ -21,6 +21,7 @@ class SleepAnalysysViewController: UIViewController{
     
     @IBOutlet weak var barChartView: BarChartView!
     
+    var recentSleepDate : [String] = []
     var resultToSleepAmount : [TimeInterval] = []
     
     var startTime = TimeInterval()
@@ -30,20 +31,25 @@ class SleepAnalysysViewController: UIViewController{
     let healthStore = HKHealthStore()
     let testDays = ["05.01", "05.02", "05.03", "05.04", "05.05", "05.06", "05.07", "05.08", "05.09", "05.10", "05.10", "05.11"]
  
-
+//바차트뷰 reload 함수 있나 찾아보기 data set해주는
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        retrieveSleepAnalysis()
-        //setChart(days: self.testDays, sleepTimes: self.resultToSleepAmount)
         
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.retrieveSleepAnalysis()
+
+        }
+        DispatchQueue.main.async {
+            self.setChart(days: self.recentSleepDate, sleepTimes: self.resultToSleepAmount)
+        }
         
         barChartView.noDataText = "데이터가 없습니다."
         barChartView.noDataFont = .systemFont(ofSize: 20)
         barChartView.noDataTextColor = .lightGray
         
-        
-    
         
         let typestoRead = Set([
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
@@ -61,11 +67,9 @@ class SleepAnalysysViewController: UIViewController{
                 }
         }
      //   print("시발 크기는 이거다 \(self.resultToSleepAmount.count)")
+        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setChart(days: self.testDays, sleepTimes: self.resultToSleepAmount)
-    }
+
    
     
     
@@ -84,10 +88,9 @@ class SleepAnalysysViewController: UIViewController{
     }
     
     public func retrieveSleepAnalysis() {
-      
         // first, we define the object type we want
         if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
-            print(sleepType)
+           // print(sleepType)
             // Use a sortDescriptor to get the recent data first
             let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
             
@@ -105,14 +108,14 @@ class SleepAnalysysViewController: UIViewController{
                         if let sample = item as? HKCategorySample {
                             let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
                             print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-                            
-                            DispatchQueue.main.async {
-                                self.resultToSleepAmount.append(CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/60)
-                            }
-                            
-                            
-                            
-                          }
+            
+                            self.resultToSleepAmount.append(CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/3600)
+                            let myformatter = DateFormatter()
+                            myformatter.dateFormat = "MM / dd"
+                            myformatter.locale = Locale(identifier: "ko_KR")
+                            let sleepDate = myformatter.string(from: sample.startDate)
+                            self.recentSleepDate.append(sleepDate)
+                        }
                         print("total amount of sleep time : \(self.resultToSleepAmount), 현재 크기는 : \(self.resultToSleepAmount.count)")
                     }
                 }
@@ -160,11 +163,16 @@ class SleepAnalysysViewController: UIViewController{
             )
         }
     }
+    
+    //set chart 코드가 메인 스레드에서 동작하도록
+    
+    
     func setChart(days: [String], sleepTimes: [Double]) {
         // 데이터 생성
         var dataEntries: [BarChartDataEntry] = []
         //days.count 로 바꾸자~ 아마 7일로만 하게
-        for i in 0...2 {
+        
+        for i in 0...(days.count - 1) {
             let dataEntry = BarChartDataEntry(x: Double(i), y: sleepTimes[i])
             dataEntries.append(dataEntry)
         }
