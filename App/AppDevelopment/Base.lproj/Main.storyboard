@@ -20,7 +20,7 @@
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
-                                <rect key="frame" x="30" y="283.5" width="354" height="329"/>
+                                <rect key="frame" x="30" y="250" width="354" height="396.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-sW-eVA">
                                         <rect key="frame" x="121.5" y="0.0" width="111" height="38.5"/>
@@ -52,6 +52,12 @@
                                         <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면권장시간까지 얼마 남았니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-7a-16V">
+                                        <rect key="frame" x="77" y="376" width="200" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -72,7 +78,7 @@
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈화면" badgeValue="오빠 여기야!" id="ki8-cd-JUk"/>
+                    <tabBarItem key="tabBarItem" title="홈화면" id="ki8-cd-JUk"/>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
                     <connections>
                         <outlet property="currentTimeLabel" destination="2iE-sW-eVA" id="Cem-5R-iOE"/>

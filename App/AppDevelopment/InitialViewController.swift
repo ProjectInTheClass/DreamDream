@@ -9,16 +9,16 @@ import HealthKit
 class InitialViewController: UIViewController {
     public var startTime = TimeInterval()
     public var timer:Timer = Timer()
-    public var endTime: NSDate!
-    public var alarmTime: NSDate!
+//    public var endTime: NSDate!
+ //   public var alarmTime: NSDate!
     public let healthStore = HKHealthStore()
-    
+    public var buttonflag : Int = 0
     @IBOutlet weak var displayTimeLabel: UILabel!
     
     @IBOutlet weak var dreamIconButton: UIButton!
-
     @IBOutlet weak var currentTimeLabel: UILabel!
     override func viewDidLoad() {
+        
 
         let date = Date()
         let format = DateFormatter()
@@ -32,13 +32,31 @@ class InitialViewController: UIViewController {
         
     }
     @IBAction func startButtonTapped(_ sender: Any) {
-        alarmTime = NSDate()
+        if self.buttonflag == 0 {
+            start()
+            buttonflag = 1
+        }else{
+            stop()
+            buttonflag = 0
+        }
+    }
+    
+    func start(){
+        alarmTime = NSDate() as Date
         if (!timer.isValid) {
             let aSelector : Selector = #selector(InitialViewController.updateTime)
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
     }
+    
+  
+    func stop() {
+        endTime = NSDate() as Date
+        saveSleepAnalysis()
+        timer.invalidate()
+     }
+    
     
     @objc func updateTime() {
         let currentTime = NSDate.timeIntervalSinceReferenceDate

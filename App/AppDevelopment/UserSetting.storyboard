@@ -44,7 +44,7 @@
                             <constraint firstItem="gYs-BF-aNS" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" constant="-372" id="wAs-dP-aob"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5AQ-xh-bmJ"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="5AQ-xh-bmJ" userLabel="설정"/>
                     <navigationItem key="navigationItem" title="Title" id="U6o-sP-Whm"/>
                     <connections>
                         <outlet property="homeButton" destination="IdH-TH-7sY" id="mBy-qw-Jle"/>

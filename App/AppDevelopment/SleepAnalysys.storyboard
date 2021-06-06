@@ -20,41 +20,47 @@
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smu-QO-b1q">
-                                <rect key="frame" x="20" y="44" width="64" height="64"/>
-                                <state key="normal" title="Button" image="DreamIcon"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면 분석" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-HA-Si6">
-                                <rect key="frame" x="161" y="61" width="92.5" height="30"/>
+                                <rect key="frame" x="161" y="74" width="92.5" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D59-lo-hQj" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="55" y="195" width="311" height="266"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-Fd-Oxz">
+                                <rect key="frame" x="50" y="791" width="314" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-eP-b13" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="154" width="374" height="587"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="moq-dB-Xgc"/>
                         <constraints>
+                            <constraint firstItem="zfM-HA-Si6" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="30" id="FRi-5y-f3I"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="leading" secondItem="eVx-ki-yV0" secondAttribute="leadingMargin" constant="-34" id="HTP-kM-k5U"/>
-                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="smu-QO-b1q" secondAttribute="trailing" constant="330" id="drz-0t-IA0"/>
+                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="SjE-Es-IhD"/>
+                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="leading" secondItem="moq-dB-Xgc" secondAttribute="leading" constant="50" id="UMH-ab-hpg"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="wMu-eP-b13" secondAttribute="trailing" constant="20" id="Xxo-ec-683"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="bottom" secondItem="a9v-Fd-Oxz" secondAttribute="bottom" constant="50" id="bST-Gc-ME8"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="fBi-tw-cg8"/>
-                            <constraint firstItem="smu-QO-b1q" firstAttribute="leading" secondItem="eVx-ki-yV0" secondAttribute="leadingMargin" id="fHi-L2-fg6"/>
-                            <constraint firstItem="smu-QO-b1q" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" id="n99-Aj-kxz"/>
-                            <constraint firstItem="moq-dB-Xgc" firstAttribute="bottom" secondItem="smu-QO-b1q" secondAttribute="bottom" constant="754" id="oDX-nh-UMa"/>
+                            <constraint firstItem="wMu-eP-b13" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="fdH-ZX-jvD"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="a9v-Fd-Oxz" secondAttribute="trailing" constant="50" id="hmz-ho-7jB"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="11" id="vKd-aX-ZzZ"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="centerY" secondItem="eVx-ki-yV0" secondAttribute="centerY" id="vY0-1S-kJo"/>
+                            <constraint firstItem="wMu-eP-b13" firstAttribute="leading" secondItem="moq-dB-Xgc" secondAttribute="leading" constant="20" id="xUn-eQ-gX4"/>
+                            <constraint firstItem="wMu-eP-b13" firstAttribute="top" secondItem="zfM-HA-Si6" secondAttribute="bottom" constant="50" id="yEz-Ya-Jl9"/>
                             <constraint firstItem="zfM-HA-Si6" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="yNB-xe-uw0"/>
-                            <constraint firstItem="zfM-HA-Si6" firstAttribute="centerY" secondItem="eVx-ki-yV0" secondAttribute="centerY" constant="-372" id="yNc-L3-Cnd"/>
+                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="top" secondItem="wMu-eP-b13" secondAttribute="bottom" constant="50" id="yRx-IG-zgd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gwQ-Uy-Rs7"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="gwQ-Uy-Rs7" userLabel="수면분석"/>
                     <navigationItem key="navigationItem" id="jeN-BS-JnQ"/>
                     <connections>
-                        <outlet property="barChartView" destination="D59-lo-hQj" id="fpk-bg-6Fd"/>
-                        <outlet property="homeButton" destination="smu-QO-b1q" id="179-eF-7cf"/>
+                        <outlet property="lineChartView" destination="wMu-eP-b13" id="ly5-dR-hx9"/>
+                        <outlet property="sleepAnalyzeLabel" destination="a9v-Fd-Oxz" id="sZM-j1-MUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKP-xk-4Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +70,6 @@
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
-        <image name="DreamIcon" width="267.5" height="267.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

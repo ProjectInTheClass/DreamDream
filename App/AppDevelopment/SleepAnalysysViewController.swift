@@ -21,36 +21,47 @@ class SleepAnalysysViewController: UIViewController{
     
     @IBOutlet weak var barChartView: BarChartView!
     
-    var recentSleepDate : [String] = []
+    @IBOutlet weak var lineChartView: LineChartView!
+    
+    @IBOutlet weak var sleepAnalyzeLabel: UILabel!
+    
+    var recentSleepDate : [String] = [] // sleep start date  MM / dd
+    var recentSleepStartHour : [String] = [] // sleep start hour for line chart
+    var recentSleepStartHourDouble : [Double] = []
+    var recentSleepEndHour: [String] = []
+    
     var resultToSleepAmount : [TimeInterval] = []
-    
-    var startTime = TimeInterval()
-    var timer:Timer = Timer()
-    var endTime: NSDate!
-    var alarmTime: NSDate!
-    let healthStore = HKHealthStore()
-    let testDays = ["05.01", "05.02", "05.03", "05.04", "05.05", "05.06", "05.07", "05.08", "05.09", "05.10", "05.10", "05.11"]
+    var wakeUp : [Double] = []
+
+  
  
-//바차트뷰 reload 함수 있나 찾아보기 data set해주는
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lineChartView.noDataText = "데이터를 불러오는데 실패했습니다."
+        lineChartView.noDataFont = .systemFont(ofSize: 20)
+        lineChartView.noDataTextColor = .lightGray
+        
 
+        self.retrieveSleepAnalysis{ payload, error in
+            DispatchQueue.main.async {
+              //  print("playload : \(payload)")
+                
+                self.recentSleepStartHourDouble = self.stringTimeToDouble(stringTime: payload)
+                self.wakeUp = self.wakeupTimeCalculation(start: self.recentSleepStartHourDouble, end: self.resultToSleepAmount)
+                self.setChart(days: self.recentSleepDate.reversed(), sleepTimes: self.recentSleepStartHourDouble.reversed(), wakeupTimes: self.wakeUp.reversed())
+                let sleepCount = Double(self.recentSleepDate.count)
+                
+                let totalSleep = self.resultToSleepAmount.reduce(0){(v1,v2)in v1 + v2}
+                let averageSleep = totalSleep / sleepCount
+                
+                print("평균 수면시간 \(averageSleep)")
+            }
+        }
         
-        DispatchQueue.global(qos: .userInteractive).async {
-            self.retrieveSleepAnalysis()
 
-        }
-        DispatchQueue.main.async {
-            self.setChart(days: self.recentSleepDate, sleepTimes: self.resultToSleepAmount)
-        }
-        
-        barChartView.noDataText = "데이터가 없습니다."
-        barChartView.noDataFont = .systemFont(ofSize: 20)
-        barChartView.noDataTextColor = .lightGray
-        
-        
+
+
+
         let typestoRead = Set([
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
                 ])
@@ -61,33 +72,28 @@ class SleepAnalysysViewController: UIViewController{
         
         
             
-        self.healthStore.requestAuthorization(toShare: typestoShare, read: typestoRead) { (success, error) -> Void in
+        healthStore.requestAuthorization(toShare: typestoShare, read: typestoRead) { (success, error) -> Void in
                 if success == false {
                     NSLog(" Display not allowed")
                 }
         }
-     //   print("시발 크기는 이거다 \(self.resultToSleepAmount.count)")
-        
     }
 
-   
-    
-    
+
     // 아래 함수는 화면을 다시 켰을때, 즉 잠금모드 이후에 어플을 다시 활성화 시에 등록
-    func stop(sender: AnyObject) {
+   /* func stop(sender: AnyObject) {
         endTime = NSDate()
         saveSleepAnalysis()
-        retrieveSleepAnalysis()
         timer.invalidate()
-    }
+    }*/
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    public func retrieveSleepAnalysis() {
+    public func retrieveSleepAnalysis( completionHandler:@escaping ( [String]?, Error?) -> Void) {
+        print("retrieve 함수 진입")
         // first, we define the object type we want
         if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
            // print(sleepType)
@@ -96,102 +102,149 @@ class SleepAnalysysViewController: UIViewController{
             
             // we create our query with a block completion to execute
             
-            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 7, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 7, sortDescriptors: [sortDescriptor]) { (query, Result, error) -> Void in
                 
                 if error != nil {
-                    // something happened
+                    completionHandler(nil, error)
                     return
                 }
-                if let result = tmpResult {
-                                       // do something with my data
+                if let result = Result {
+                    print("line 117   Result : \(result)")
+
+                    
+                    
+                                  // process each samples
                     for item in result {
                         if let sample = item as? HKCategorySample {
+                            
+                            
                             let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
+                      
                             print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-            
-                            self.resultToSleepAmount.append(CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/3600)
-                            let myformatter = DateFormatter()
-                            myformatter.dateFormat = "MM / dd"
-                            myformatter.locale = Locale(identifier: "ko_KR")
-                            let sleepDate = myformatter.string(from: sample.startDate)
-                            self.recentSleepDate.append(sleepDate)
+                            let sleepHour = Calendar.current.component(.hour, from: sample.startDate)
+                            print("현지시각으로 잠든시간 \(sleepHour)")
+                            
+                            if sleepHour < 19 && sleepHour > 12{
+                                print("낮잠")
+                            }
+                            
+                            else{
+                                self.resultToSleepAmount.append(CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/3600)
+                                let myDateFormatter = DateFormatter()
+                                myDateFormatter.dateFormat = "MM / dd"
+                                myDateFormatter.locale = Locale(identifier: "ko_KR")
+                                let sleepDate = myDateFormatter.string(from: sample.startDate)
+                                self.recentSleepDate.append(sleepDate)
+                                
+                                let myHourFormatter = DateFormatter()
+                                myHourFormatter.dateFormat = "HHmm"
+                                myHourFormatter.locale = Locale(identifier: "ko_KR")
+                                let sleepStartHour = myHourFormatter.string(from: sample.startDate)
+                                self.recentSleepStartHour.append(sleepStartHour)
+                                print("잠든 시간은 몇시몇분? \(sleepStartHour)")
+                                let sleepEndHour = myHourFormatter.string(from: sample.endDate)
+                                self.recentSleepEndHour.append(sleepEndHour)
+                                
+                                
+                            }
                         }
                         print("total amount of sleep time : \(self.resultToSleepAmount), 현재 크기는 : \(self.resultToSleepAmount.count)")
                     }
+                    
+                    completionHandler(self.recentSleepStartHour, nil)
                 }
             }
             // finally, we execute our query
             healthStore.execute(query)
             
+
+            
         }
+        
     }
     
-    func saveSleepAnalysis() {
-        // alarmTime and endTime are NSDate objects
-        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
-            
-            // we create our new object we want to push in Health app
-            let object = HKCategorySample(type:sleepType, value: HKCategoryValueSleepAnalysis.inBed.rawValue, start: self.alarmTime as Date, end: self.endTime as Date)
-            
-            // at the end, we save it
-            healthStore.save(object, withCompletion: { (success, error) -> Void in
-                
-                if error != nil {
-                    // something happened
-                    return
-                }
-                if success {
-                    print("My new data was saved in HealthKit")
-                    
-                } else {
-                    // something happened again
-                }
-            })
-            let object2 = HKCategorySample(type:sleepType, value: HKCategoryValueSleepAnalysis.asleep.rawValue, start: self.alarmTime as Date, end: self.endTime as Date)
-            
-            healthStore.save(object2, withCompletion: { (success, error) -> Void in
-                if error != nil {
-                    // something happened
-                    return
-                }
-                if success {
-                    print("My new data (2) was saved in HealthKit")
-                } else {
-                    // something happened again
-                    }
-                }
-            )
-        }
-    }
-    
-    //set chart 코드가 메인 스레드에서 동작하도록
+
     
     
-    func setChart(days: [String], sleepTimes: [Double]) {
+    
+    func setChart(days: [String], sleepTimes: [Double], wakeupTimes: [Double]) {
         // 데이터 생성
-        var dataEntries: [BarChartDataEntry] = []
+        print("********************\nset Chart 함수 진입\n********************")
+        var dataEntries1: [ChartDataEntry] = []
+        var dataEntries2: [ChartDataEntry] = []
+        let data = LineChartData()
         //days.count 로 바꾸자~ 아마 7일로만 하게
-        
-        for i in 0...(days.count - 1) {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: sleepTimes[i])
-            dataEntries.append(dataEntry)
+        if days.count == sleepTimes.count && days.count == wakeupTimes.count && days.count > 0{
+            
+            for i in 0 ... days.count - 1 {
+                let dataEntry1 = ChartDataEntry(x: Double(i), y: Double(sleepTimes[i]))
+                dataEntries1.append(dataEntry1)
+            }
+
+            let sleepStartLine = LineChartDataSet(entries: dataEntries1, label: "잠든시각")
+            data.addDataSet(sleepStartLine)
+            
+            
+            for i in 0 ... days.count - 1 {
+                let dataEntry2 = ChartDataEntry(x: Double(i), y: Double(wakeupTimes[i]))
+                dataEntries2.append(dataEntry2)
+            }
+
+            let sleepEndLine = LineChartDataSet(entries: dataEntries2, label: "기상시각")
+            data.addDataSet(sleepEndLine)
+            
+            
+            // 차트 컬러
+            sleepStartLine.colors = [.systemGray]
+
+            // 데이터 삽입
+         //   let chartData = LineChartData(dataSet: [sleepStartLine,sleepEndLine])
+            
+            lineChartView.data = data
+            // X축 레이블 위치 조정
+            lineChartView.xAxis.labelPosition = .bottom
+            // X축 레이블 포맷 지정
+            lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
+            lineChartView.xAxis.labelTextColor = .white
+            //lineChartView.leftAxis.axisMinimum = 4
         }
-
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "수면시간")
-
-        // 차트 컬러
-        chartDataSet.colors = [.systemGray]
-
-        // 데이터 삽입
-        let chartData = BarChartData(dataSet: chartDataSet)
-        barChartView.data = chartData
-        // X축 레이블 위치 조정
-        barChartView.xAxis.labelPosition = .bottom
-        // X축 레이블 포맷 지정
-        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
-        barChartView.xAxis.labelTextColor = .white
-        
+        print(data)
     }
-}
     
+    //this function converts times saved in string type to Int type For chart value
+    func stringTimeToDouble(stringTime:[String]!)->[Double]{
+        print("********************\nstring Time to double 함수 진입\n********************")
+
+        var returnArray : [Double] = []
+        for i in stringTime{
+            let intTime = Int(i)!
+            let convertedTime =  (intTime / 100) * 60 + intTime % 100
+            let result : Double! = Double(convertedTime) / 60
+            returnArray.append(result)
+        }
+        return returnArray
+    }
+    
+    //this function returns time sleeping time per day
+    func wakeupTimeCalculation(start:[Double],end:[Double])->[Double]{
+        print("********************\nwakeupTimeCalculation 함수 진입\n********************")
+
+        if  start.count != end.count || start.count == 0{
+            print("Error Start Count ")
+            return []
+        }
+        else{
+            print("Start count : \(start.count)")
+            var calculatedWakeUpTime : [Double] = []
+            for i in 0...(start.count - 1){
+                let value = start[i] + end[i]
+                
+                calculatedWakeUpTime.append(value)
+            }
+            return calculatedWakeUpTime
+        }
+    }
+    
+}
+
 
