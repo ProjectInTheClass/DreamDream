@@ -53,7 +53,7 @@ class SleepAnalysysViewController: UIViewController{
                 
                 let totalSleep = self.resultToSleepAmount.reduce(0){(v1,v2)in v1 + v2}
                 let averageSleep = totalSleep / sleepCount
-                
+                self.sleepAnalyzeLabel.text = "당신은 잠을 너무 많이 잡니다!! 수면 시간을 조금 줄여보는 것은 어떤가요?? 8시간 정도로요!"
                 print("평균 수면시간 \(averageSleep)")
             }
         }
@@ -102,7 +102,7 @@ class SleepAnalysysViewController: UIViewController{
             
             // we create our query with a block completion to execute
             
-            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 7, sortDescriptors: [sortDescriptor]) { (query, Result, error) -> Void in
+            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 10, sortDescriptors: [sortDescriptor]) { (query, Result, error) -> Void in
                 
                 if error != nil {
                     completionHandler(nil, error)
@@ -196,6 +196,13 @@ class SleepAnalysysViewController: UIViewController{
             
             // 차트 컬러
             sleepStartLine.colors = [.systemGray]
+            sleepStartLine.circleHoleColor = .systemGray
+            sleepStartLine.drawFilledEnabled = true
+            sleepEndLine.colors = [.systemBlue]
+            sleepEndLine.circleHoleColor = .systemBlue
+            sleepEndLine.drawFilledEnabled = true
+            
+            
 
             // 데이터 삽입
          //   let chartData = LineChartData(dataSet: [sleepStartLine,sleepEndLine])
@@ -206,7 +213,6 @@ class SleepAnalysysViewController: UIViewController{
             // X축 레이블 포맷 지정
             lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
             lineChartView.xAxis.labelTextColor = .white
-            //lineChartView.leftAxis.axisMinimum = 4
         }
         print(data)
     }

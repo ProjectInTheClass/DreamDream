@@ -72,7 +72,6 @@
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxO-dr-1Ec"/>
                             <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="Sac-F8-L12"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="eHR-h4-dD1"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPk-70-919"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>

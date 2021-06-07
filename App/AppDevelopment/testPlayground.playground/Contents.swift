@@ -1,40 +1,26 @@
 import UIKit
 
-var greeting = "Hello, playground"
-
-print("heello")
-
-let mystr1 = "2330"
-let mystr = Int(mystr1)!
-
-Int("2330")
-//let convertedTime =  ((mystr / 100) * 60 + mystr.truncatingRemainder(dividingBy: 100)) / 60
-//print(convertedTime)
-
-2330 / 100
-
-mystr
-mystr / 100
-mystr % 100
-
-func stringTimeToDouble(stringTime:[String])->[Double]{
-    var returnArray : [Double] = []
-    for i in stringTime{
-        let intTime = Int(i)!
-        let convertedTime =  ((intTime / 100) * 60 + intTime % 100) / 60
-        returnArray.append(Double(convertedTime))
+func timeChanger(arr : [Double]) -> [Double]{
+    var newArr : [Double] = []
+    for i in arr{
+        if i < 0600{
+            newArr.append(i + 2400)
+        }else{
+            newArr.append(i)
+        }
     }
-    return returnArray
+    return newArr
 }
 
-let test =  ["0200", "2200", "2330", "2220"]
+ func standardDeviation(timeArr : [Double]) -> Double
+{
+    let newTime = timeChanger(arr: timeArr)
+    let length = Double(newTime.count)
 
-stringTimeToDouble(stringTime: test)
-let one :Int!
-one = Int("2330")
-let convert = ((one / 100) * 60 + one % 100)
-Double(convert) / 60
-let result : Double!
-result = Double(convert) / 60
+    let avg = newTime.reduce(0, {$0 + $1}) / length
+    print(avg)
+    let sumOfSquaredAvgDiff = (newTime.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})) / length
+    return sqrt(sumOfSquaredAvgDiff)
+}
 
-print(result)
+standardDeviation(arr : [2,4,4,4,5,5,7,9])

@@ -16,44 +16,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" highlightedImage="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="cJF-4m-zIz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="cJF-4m-zIz">
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면 분석" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-HA-Si6">
-                                <rect key="frame" x="161" y="74" width="92.5" height="30"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-Fd-Oxz">
-                                <rect key="frame" x="50" y="791" width="314" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-eP-b13" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="154" width="374" height="587"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wqo-9Q-HQG">
+                                <rect key="frame" x="20" y="94" width="374" height="748"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면 분석" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-HA-Si6">
+                                        <rect key="frame" x="141" y="0.0" width="92.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Rud-d5-PSx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-eP-b13" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="124" width="374" height="400"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="Psn-ir-LHT"/>
+                                            <constraint firstAttribute="height" constant="400" id="b3r-RP-ccK"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초기화 안된거임" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-Fd-Oxz">
+                                        <rect key="frame" x="20" y="598" width="334" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="OR0-AJ-Njn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="a9v-Fd-Oxz" secondAttribute="trailing" constant="20" id="1jC-gC-1ji"/>
+                                    <constraint firstAttribute="trailing" secondItem="a9v-Fd-Oxz" secondAttribute="trailing" constant="20" id="g1f-az-FJd"/>
+                                    <constraint firstItem="a9v-Fd-Oxz" firstAttribute="leading" secondItem="Wqo-9Q-HQG" secondAttribute="leading" constant="20" id="iwU-xK-nBa"/>
+                                    <constraint firstItem="a9v-Fd-Oxz" firstAttribute="leading" secondItem="Wqo-9Q-HQG" secondAttribute="leading" constant="20" id="vHX-Ws-HfL"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="moq-dB-Xgc"/>
                         <constraints>
-                            <constraint firstItem="zfM-HA-Si6" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="30" id="FRi-5y-f3I"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="Wqo-9Q-HQG" secondAttribute="trailing" constant="20" id="H4R-PC-yzl"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="leading" secondItem="eVx-ki-yV0" secondAttribute="leadingMargin" constant="-34" id="HTP-kM-k5U"/>
-                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="SjE-Es-IhD"/>
-                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="leading" secondItem="moq-dB-Xgc" secondAttribute="leading" constant="50" id="UMH-ab-hpg"/>
-                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="wMu-eP-b13" secondAttribute="trailing" constant="20" id="Xxo-ec-683"/>
-                            <constraint firstItem="moq-dB-Xgc" firstAttribute="bottom" secondItem="a9v-Fd-Oxz" secondAttribute="bottom" constant="50" id="bST-Gc-ME8"/>
+                            <constraint firstItem="Wqo-9Q-HQG" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="Ks5-6P-Qax"/>
+                            <constraint firstItem="moq-dB-Xgc" firstAttribute="bottom" secondItem="Wqo-9Q-HQG" secondAttribute="bottom" constant="20" id="R5w-Kb-5Kq"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="fBi-tw-cg8"/>
-                            <constraint firstItem="wMu-eP-b13" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="fdH-ZX-jvD"/>
-                            <constraint firstItem="moq-dB-Xgc" firstAttribute="trailing" secondItem="a9v-Fd-Oxz" secondAttribute="trailing" constant="50" id="hmz-ho-7jB"/>
+                            <constraint firstItem="Wqo-9Q-HQG" firstAttribute="leading" secondItem="moq-dB-Xgc" secondAttribute="leading" constant="20" id="smf-rZ-nBb"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="11" id="vKd-aX-ZzZ"/>
                             <constraint firstItem="cJF-4m-zIz" firstAttribute="centerY" secondItem="eVx-ki-yV0" secondAttribute="centerY" id="vY0-1S-kJo"/>
-                            <constraint firstItem="wMu-eP-b13" firstAttribute="leading" secondItem="moq-dB-Xgc" secondAttribute="leading" constant="20" id="xUn-eQ-gX4"/>
-                            <constraint firstItem="wMu-eP-b13" firstAttribute="top" secondItem="zfM-HA-Si6" secondAttribute="bottom" constant="50" id="yEz-Ya-Jl9"/>
-                            <constraint firstItem="zfM-HA-Si6" firstAttribute="centerX" secondItem="eVx-ki-yV0" secondAttribute="centerX" id="yNB-xe-uw0"/>
-                            <constraint firstItem="a9v-Fd-Oxz" firstAttribute="top" secondItem="wMu-eP-b13" secondAttribute="bottom" constant="50" id="yRx-IG-zgd"/>
+                            <constraint firstItem="Wqo-9Q-HQG" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="50" id="yog-Gn-VJd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gwQ-Uy-Rs7" userLabel="수면분석"/>
