@@ -23,4 +23,4 @@ func timeChanger(arr : [Double]) -> [Double]{
     return sqrt(sumOfSquaredAvgDiff)
 }
 
-standardDeviation(arr : [2,4,4,4,5,5,7,9])
+standardDeviation(timeArr:  [20,26,27,24])

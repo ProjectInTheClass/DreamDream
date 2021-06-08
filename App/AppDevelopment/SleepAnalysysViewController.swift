@@ -43,18 +43,17 @@ class SleepAnalysysViewController: UIViewController{
         
 
         self.retrieveSleepAnalysis{ payload, error in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
               //  print("playload : \(payload)")
                 
                 self.recentSleepStartHourDouble = self.stringTimeToDouble(stringTime: payload)
-                self.wakeUp = self.wakeupTimeCalculation(start: self.recentSleepStartHourDouble, end: self.resultToSleepAmount)
-                self.setChart(days: self.recentSleepDate.reversed(), sleepTimes: self.recentSleepStartHourDouble.reversed(), wakeupTimes: self.wakeUp.reversed())
-                let sleepCount = Double(self.recentSleepDate.count)
-                
-                let totalSleep = self.resultToSleepAmount.reduce(0){(v1,v2)in v1 + v2}
-                let averageSleep = totalSleep / sleepCount
-                self.sleepAnalyzeLabel.text = "당신은 잠을 너무 많이 잡니다!! 수면 시간을 조금 줄여보는 것은 어떤가요?? 8시간 정도로요!"
-                print("평균 수면시간 \(averageSleep)")
+                self.wakeUp = self.wakeupTimeCalculation(start: timeChanger(arr: self.recentSleepStartHourDouble) , end: self.resultToSleepAmount)
+                self.setChart(days: self.recentSleepDate.reversed(), sleepTimes:timeChanger(arr: self.recentSleepStartHourDouble.reversed()) , wakeupTimes: self.wakeUp.reversed() )
+    
+
+                let myProblem = sleepAnalizer(sleepStartTime: self.recentSleepStartHourDouble, timeArr: self.resultToSleepAmount)
+                self.sleepAnalyzeLabel.text = getFeedback(info: myProblem)
+               
             }
         }
         

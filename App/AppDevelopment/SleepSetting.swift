@@ -51,8 +51,8 @@ func saveSleepAnalysis() {
 func timeChanger(arr : [Double]) -> [Double]{
     var newArr : [Double] = []
     for i in arr{
-        if i < 0600{
-            newArr.append(i + 2400)
+        if i < 06{
+            newArr.append(i + 24)
         }else{
             newArr.append(i)
         }
@@ -60,29 +60,54 @@ func timeChanger(arr : [Double]) -> [Double]{
     return newArr
 }
 
-// 표준편차를 계산해주는 함수
- func standardDeviation(timeArr : [Double]) -> Double
+enum sleepFeedback {
+    case irregularSleepTime
+    case lackOfSleepingHour
+    case lateSleeptime
+    case good
+    
+}
+// 수면습관을 분석해주는 함수
+func sleepAnalizer(sleepStartTime : [Double],timeArr : [Double]) -> sleepFeedback
 {
-    let newTime = timeChanger(arr: timeArr)
-    let length = Double(newTime.count)
-
-    let avg = newTime.reduce(0, {$0 + $1}) / length
-    print(avg)
-    let sumOfSquaredAvgDiff = (newTime.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})) / length
-    return sqrt(sumOfSquaredAvgDiff)
+    let length = Double(sleepStartTime.count)
+    
+    let newSleepStartTime = timeChanger(arr: sleepStartTime)
+    
+    let avgSleepStartTime = newSleepStartTime.reduce(0, {$0 + $1}) / length
+    
+    let deviation = (newSleepStartTime.map { pow($0 - avgSleepStartTime, 2.0)}.reduce(0, {$0 + $1})) / length
+    
+    let stdevp = sqrt(deviation)
+    
+    if stdevp > 2.5{
+        return .irregularSleepTime
+    }
+    
+    let avgSleephour = timeArr.reduce(0, {$0 + $1}) / length
+    
+    if avgSleephour < 7{
+        return .lackOfSleepingHour
+    }
+    
+    if avgSleepStartTime >= 25{
+        return .lateSleeptime
+    }
+    
+    return .good
 }
 
-//수면 분석
-// 평균 수면시간이 너무 길거나 짧은 경우
-// 잠 자는 시각이 너무 불규칙 한 경우 ( 편차 알아보기 ) ** 새벽에 담드는 경우 시간이 01시, 02시로 되는거를 25시 26시로 계산해야함
-// 잠 자는 시각이 너무 늦은 새벽인 경우
-// 일어나는 시각이 불규칙한 경우??
-// enum 공부해와서 밑에거 완성하기
-/*let jansori : String: enum{
-    switch  {
-    case tooLateSleep:
-        return "씨발놈아 일찍 좀 자"
-    default:
-        <#code#>
+
+
+func getFeedback(info : sleepFeedback) -> String{
+    switch info {
+    case .irregularSleepTime:
+        return "잠자리에 드는 시각이 너무 불규칙합니다. 불규칙한 수면패턴은 생활리듬을 깨는 가장 큰 요인이에요!!\n 규칙적으로 잠자리에 드는건 어떠신가요? 😅"
+    case .lackOfSleepingHour:
+        return "너무 잠을 적게 주무시네요😭 하루 권장 수면시간은 7~8시간이에요!! 건강을 위해서 조금 더 주무시는건 어떠신가요? 🥺"
+    case .lateSleeptime:
+        return "너무 늦게 잠을 자고 있어요!! 너무 늦게 자면 잠을 오래 자더라도 피로가 잘 풀리지 않는답니다. 오늘부터라도 좀 더 일찍 잠자리에 드는 습관을 길러보세요! 😉"
+    case .good:
+        return "좋은 수면습관을 가지고 있습니다!! 이대로 쭉 좋은 습관을 유지하신다면 분명 삶에 큰 도움이 될거에요!!🤗"
     }
-}*/
+}
