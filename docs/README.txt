@@ -1,40 +1,37 @@
-Spectral by HTML5 UP
+Twenty by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 
-A big, modern, blocky affair with a mobile-style menu, fully responsive styling,
-and an assortment of pre-styled elements. So, pretty much what you were expecting
--- except, of course, for how it's put together, specifically:
+This is Twenty, a minimal, multi-page responsive site template for HTML5 UP.
 
-- It's built with components from my Responsive Tools project.
+As the name implies, this is my twentieth (!) design for HTML5 UP. Since the last
+few have been single page affairs, I decided to go with something a bit more conventional
+and threw in four extra page layouts. Beyond that, it's the usual drill: fully responsive,
+built on HTML5/CSS3, and CCA licensed like all my other stuff. Sass sources are also
+included for those of you into that sort of thing (entirely optional).
 
-- It uses flexbox, which eliminates all kinds of terrible hacks and clunky layout
-  stopgaps (like CSS grid systems).
+Special thanks to Michael Domaradzki (md.photomerchant.net) for allowing me to use
+his excellent photos in Twenty's demo*.
 
-- It uses Sass* a lot more intelligently, thanks in part to several new mixins
-  and functions I've been working on (as well as a few by @HugoGiraudel).
-
-  (* = still entirely optional if you prefer vanilla CSS :)
-
-- A ton of other stuff.
-
-In short, Spectral's the culmination of several new things I'm working on/trying out,
-so please, let me know what you think :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
+(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
+and/or use any of Michael's work without his explicit permission!)
 
 AJ
 aj@lkn.io | @ajlkn
+
+PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
 
 
 Credits:
 
 	Demo Images:
-		Unsplash (unsplash.com)
+		Michael Domaradzki (md.photomerchant.net)
+			"Night Vision"
+			"At the Station II"
+			"Airchitecture II"
+			"Livewires II"
+			"Midnite Xpress I"
 
 	Icons:
 		Font Awesome (fontawesome.io)
