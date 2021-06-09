@@ -1,99 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tit-P9-jDB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--콘텐츠 라이브러리-->
-        <scene sceneID="Lm5-pk-rPJ">
+        <!--컨텐츠-->
+        <scene sceneID="s0d-6b-0kx">
             <objects>
-                <tableViewController title="콘텐츠 라이브러리" id="tit-P9-jDB" customClass="VideoTableViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wqC-iN-hOh">
+                <viewController id="Y6W-OH-hqX" customClass="VideoTableViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="myT-5F-PAk">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" systemColor="opaqueSeparatorColor"/>
-                            <items>
-                                <navigationItem title="컨텐츠 라이브러리" id="X9p-ko-lrf">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="edit" id="g2S-oS-eHs"/>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="0d4-Q1-NuL"/>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" id="aPd-qj-KoC" customClass="VideoTableViewCell" customModule="DreamDream" customModuleProvider="target">
-<<<<<<< HEAD
-                                <rect key="frame" x="0.0" y="68.333333969116211" width="414" height="163"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPd-qj-KoC" id="l0L-K3-Qr0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-L9-5BI">
-                                            <rect key="frame" x="10" y="10" width="394" height="143"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-Ju-LGl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="143"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsW-xO-Hav">
-                                                    <rect key="frame" x="202" y="0.0" width="192" height="143"/>
-=======
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="158.33332824707031"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPd-qj-KoC" id="l0L-K3-Qr0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="158.33332824707031"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-L9-5BI">
-                                            <rect key="frame" x="10" y="10" width="394" height="138.33333333333334"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-Ju-LGl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="138.33333333333334"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsW-xO-Hav">
-                                                    <rect key="frame" x="202" y="0.0" width="192" height="138.33333333333334"/>
->>>>>>> 268a879724f5604c28d307b5796cab777bab90a5
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="RRu-L9-5BI" secondAttribute="bottom" constant="10" id="09A-fn-IE7"/>
-                                        <constraint firstAttribute="trailing" secondItem="RRu-L9-5BI" secondAttribute="trailing" constant="10" id="9x5-HW-pC5"/>
-                                        <constraint firstItem="RRu-L9-5BI" firstAttribute="top" secondItem="l0L-K3-Qr0" secondAttribute="top" constant="10" id="m0e-7J-Fw1"/>
-                                        <constraint firstItem="RRu-L9-5BI" firstAttribute="leading" secondItem="l0L-K3-Qr0" secondAttribute="leading" constant="10" id="tDY-ll-sP7"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="thumnailView" destination="ZfT-Ju-LGl" id="ptc-n9-98I"/>
-                                    <outlet property="titleLabel" destination="NsW-xO-Hav" id="UAP-mo-o3e"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="tit-P9-jDB" id="CmJ-Fc-wib"/>
-                            <outlet property="delegate" destination="tit-P9-jDB" id="7E3-RH-dVh"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JgM-3M-BjE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="컨텐츠" id="POG-A8-M76"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758" y="-1608"/>
+            <point key="canvasLocation" x="162" y="197"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
