@@ -1,6 +1,0 @@
-framework module Pods_YoutubeToy {
-  umbrella header "Pods-YoutubeToy-umbrella.h"
-
-  export *
-  module * { export * }
-}
