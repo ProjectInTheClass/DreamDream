@@ -26,6 +26,7 @@ class VideoTableViewCell: UITableViewCell {
     func update(with video: Video) {
         titleLabel.text = video.title
         // TODO: video title 받아오기 or 사용자가 설정
-        thumnailView.kf.setImage(with: video.thumnailURL)
+        thumnailView.kf.indicatorType = .activity
+        thumnailView.kf.setImage(with: video.thumnailURL, placeholder: UIImage(named: "DreamIcon"), options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 192.0, height: 111.0), mode: .aspectFill)), .transition(.fade(0.5)), .cacheOriginalImage])
     }
 }
