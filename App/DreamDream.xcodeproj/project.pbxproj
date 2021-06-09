@@ -26,6 +26,7 @@
 		EDAF90302670AB7600996A40 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF902F2670AB7600996A40 /* Video.swift */; };
 		EDAF903826712DDA00996A40 /* ContentLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */; };
 		EDAF903D2671349700996A40 /* ContentLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */; };
+		EDAF90412671548300996A40 /* AddEditVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EDAF902F2670AB7600996A40 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentLibrary.storyboard; sourceTree = "<group>"; };
 		EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLibraryViewController.swift; sourceTree = "<group>"; };
+		EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditVideoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				EDAF902F2670AB7600996A40 /* Video.swift */,
 				EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */,
 				EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */,
+				EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */,
 			);
 			path = ContentLibrary;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				7F2A63DC26412D890074C9F8 /* SleepAnalysysViewController.swift in Sources */,
 				7F94E77B261EFE5F0006720B /* InitialViewController.swift in Sources */,
+				EDAF90412671548300996A40 /* AddEditVideoTableViewController.swift in Sources */,
 				7F94E777261EFE5F0006720B /* AppDelegate.swift in Sources */,
 				7F94E779261EFE5F0006720B /* SceneDelegate.swift in Sources */,
 				34A5FB6F266A15D4008F1889 /* SleepSetting.swift in Sources */,
