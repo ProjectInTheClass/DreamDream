@@ -20,7 +20,7 @@
                                 <rect key="frame" x="-10" y="-10" width="434" height="756"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
-                                <rect key="frame" x="30" y="170.33333333333334" width="354" height="395.66666666666663"/>
+                                <rect key="frame" x="30" y="168.33333333333334" width="354" height="399.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-sW-eVA">
                                         <rect key="frame" x="121.66666666666666" y="0.0" width="111" height="38.333333333333336"/>
@@ -28,14 +28,25 @@
                                         <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 설정 시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-ds-3ch">
-                                        <rect key="frame" x="109.33333333333333" y="85.333333333333314" width="135.33333333333337" height="28.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gD-EC6">
+                                        <rect key="frame" x="15.666666666666657" y="85.333333333333314" width="322.66666666666674" height="32.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람설정시각" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwg-aS-8cX">
+                                                <rect key="frame" x="0.0" y="0.0" width="140.33333333333334" height="32.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 설정 시각" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-ds-3ch">
+                                                <rect key="frame" x="187.33333333333331" y="2.0000000000000018" width="135.33333333333331" height="28.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-cn-SUJ">
-                                        <rect key="frame" x="127" y="160.99999999999997" width="100" height="100.00000000000003"/>
+                                        <rect key="frame" x="127" y="164.66666666666666" width="100" height="99.999999999999972"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0Hj-hR-Mv4"/>
                                             <constraint firstAttribute="width" secondItem="RMj-cn-SUJ" secondAttribute="height" multiplier="1:1" id="T2S-Lw-3P5"/>
@@ -47,13 +58,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa5-lb-BPB">
-                                        <rect key="frame" x="141.66666666666666" y="308" width="71" height="20.333333333333314"/>
+                                        <rect key="frame" x="141.66666666666666" y="311.66666666666663" width="71" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수면권장시간까지 얼마 남았니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-7a-16V">
-                                        <rect key="frame" x="77" y="375.33333333333326" width="200" height="20.333333333333314"/>
+                                        <rect key="frame" x="77" y="379" width="200" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -80,6 +91,7 @@
                     <tabBarItem key="tabBarItem" title="홈화면" id="ki8-cd-JUk"/>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
                     <connections>
+                        <outlet property="alarmTimeLabel" destination="VNT-ds-3ch" id="yZd-Ux-TPD"/>
                         <outlet property="currentTimeLabel" destination="2iE-sW-eVA" id="Cem-5R-iOE"/>
                         <outlet property="displayTimeLabel" destination="Sa5-lb-BPB" id="FII-bi-ok3"/>
                         <outlet property="dreamIconButton" destination="RMj-cn-SUJ" id="MO9-gr-p7u"/>
@@ -107,7 +119,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="KJR-cS-Hou">
             <objects>
-                <tabBarController storyboardIdentifier="settingView" id="CjS-oS-Vbd" sceneMemberID="viewController">
+                <tabBarController id="CjS-oS-Vbd" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="BackGroundImage" id="gCo-tn-EzR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

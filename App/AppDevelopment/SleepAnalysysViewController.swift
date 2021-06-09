@@ -41,6 +41,7 @@ class SleepAnalysysViewController: UIViewController{
         lineChartView.noDataFont = .systemFont(ofSize: 20)
         lineChartView.noDataTextColor = .lightGray
         sleepAnalyzeLabel.text = "데이터가 없습니다."
+        
 
         self.retrieveSleepAnalysis{ payload, error in
             DispatchQueue.main.async {
@@ -52,9 +53,9 @@ class SleepAnalysysViewController: UIViewController{
                     print("line 52 .. wakeup :  \(self.wakeUp)")
                     self.setChart(days: self.recentSleepDate.reversed(), sleepTimes:timeChanger(arr: self.recentSleepStartHourDouble.reversed()) , wakeupTimes: self.wakeUp.reversed() )
         
-
-                    let myProblem = sleepAnalizer(sleepStartTime: self.recentSleepStartHourDouble, timeArr: self.resultToSleepAmount)
-                    self.sleepAnalyzeLabel.text = getFeedback(info: myProblem)
+                    if let dataAvilable = self.lineChartView.data{
+                        let myProblem = sleepAnalizer(sleepStartTime: self.recentSleepStartHourDouble, timeArr: self.resultToSleepAmount)
+                        self.sleepAnalyzeLabel.text = getFeedback(info: myProblem)}
                 }
             }
         }
@@ -123,15 +124,15 @@ class SleepAnalysysViewController: UIViewController{
                             let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
                       
                             print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-                            let sleepHour = Calendar.current.component(.hour, from: sample.startDate)
-                            print("현지시각으로 잠든시간 \(sleepHour)")
-                            
-                            if sleepHour < 19 && sleepHour > 12{
+                            let sleepStartHour = Calendar.current.component(.hour, from: sample.startDate)
+                            print("현지시각으로 잠든시간 \(sleepStartHour)")
+                            let sleepinghour = CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/3600
+                            if (sleepStartHour < 19 && sleepStartHour > 12) || sleepinghour < 4 {
                                 print("낮잠")
                             }
                             
                             else{
-                                self.resultToSleepAmount.append(CFDateGetTimeIntervalSinceDate(sample.endDate as CFDate, sample.startDate as CFDate)/3600)
+                                self.resultToSleepAmount.append(sleepinghour)
                                 let myDateFormatter = DateFormatter()
                                 myDateFormatter.dateFormat = "MM / dd"
                                 myDateFormatter.locale = Locale(identifier: "ko_KR")

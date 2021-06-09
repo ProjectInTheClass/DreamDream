@@ -10,7 +10,7 @@
         <!--Title-->
         <scene sceneID="BeX-VL-WUi">
             <objects>
-                <viewController id="PtZ-mY-Ljp" customClass="UserSettingViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserSetting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PtZ-mY-Ljp" customClass="UserSettingViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9u4-2P-jX3" userLabel="UserSetting">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,12 +18,47 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="blj-iY-Qoi">
                                 <rect key="frame" x="-14" y="55" width="442" height="786"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdH-TH-7sY">
-                                <rect key="frame" x="20" y="44" width="64" height="64"/>
-                                <state key="normal" title="Button" image="DreamIcon"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="h35-Ev-h1K" userLabel="Main Stack View">
+                                <rect key="frame" x="-113" y="182" width="640" height="532"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Pim-Pp-x2F" userLabel="sleepingHour Stack">
+                                        <rect key="frame" x="161.5" y="0.0" width="317" height="216"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="희망 수면시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-RA-Wwy">
+                                                <rect key="frame" x="0.0" y="0.0" width="141" height="216"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="시간만 입력 (ex 5)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-L3-Vmi">
+                                                <rect key="frame" x="176" y="0.0" width="141" height="216"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Grl-xF-jkM" userLabel="WakeupTime Stack">
+                                        <rect key="frame" x="0.0" y="316" width="640" height="216"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="희망 기상시각" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-sN-SoW">
+                                                <rect key="frame" x="0.0" y="92" width="320" height="32.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleAspectFit" restorationIdentifier="UserSettingView" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-3y-Geh">
+                                                <rect key="frame" x="320" y="0.0" width="320" height="216"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="wakeUpTimeChanged:" destination="PtZ-mY-Ljp" eventType="valueChanged" id="cvu-UP-PEV"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-BF-aNS">
-                                <rect key="frame" x="150" y="61" width="114" height="30"/>
+                                <rect key="frame" x="150" y="74" width="114" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -31,23 +66,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qm7-zE-ZUp"/>
                         <constraints>
-                            <constraint firstItem="qm7-zE-ZUp" firstAttribute="trailing" secondItem="IdH-TH-7sY" secondAttribute="trailing" constant="330" id="8xD-9I-Uat"/>
+                            <constraint firstItem="h35-Ev-h1K" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="ANW-6v-J4M"/>
+                            <constraint firstItem="h35-Ev-h1K" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" id="BpW-yp-asd"/>
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" id="CP1-Jn-OeM"/>
-                            <constraint firstItem="IdH-TH-7sY" firstAttribute="top" secondItem="qm7-zE-ZUp" secondAttribute="top" id="Dw1-mA-FCW"/>
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="top" secondItem="qm7-zE-ZUp" secondAttribute="top" constant="11" id="JpZ-2G-m2F"/>
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="Lcf-h2-C9c"/>
-                            <constraint firstItem="IdH-TH-7sY" firstAttribute="leading" secondItem="9u4-2P-jX3" secondAttribute="leadingMargin" id="THO-b6-VCY"/>
-                            <constraint firstItem="qm7-zE-ZUp" firstAttribute="bottom" secondItem="IdH-TH-7sY" secondAttribute="bottom" constant="754" id="ayX-fl-qHS"/>
+                            <constraint firstItem="gYs-BF-aNS" firstAttribute="top" secondItem="qm7-zE-ZUp" secondAttribute="top" constant="30" id="bks-vq-fLj"/>
                             <constraint firstItem="gYs-BF-aNS" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="dH1-7r-VL2"/>
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="leading" secondItem="9u4-2P-jX3" secondAttribute="leadingMargin" constant="-34" id="lHf-dV-lc1"/>
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="oEr-jW-2ik"/>
-                            <constraint firstItem="gYs-BF-aNS" firstAttribute="centerY" secondItem="9u4-2P-jX3" secondAttribute="centerY" constant="-372" id="wAs-dP-aob"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5AQ-xh-bmJ" userLabel="설정"/>
+                    <tabBarItem key="tabBarItem" title="사용자 설정" id="5AQ-xh-bmJ" userLabel="설정"/>
                     <navigationItem key="navigationItem" title="Title" id="U6o-sP-Whm"/>
                     <connections>
-                        <outlet property="homeButton" destination="IdH-TH-7sY" id="mBy-qw-Jle"/>
+                        <outlet property="hopeSleepingHourInputField" destination="dhT-L3-Vmi" id="8bh-6b-vWo"/>
+                        <outlet property="wakeUpTimePicker" destination="fLL-3y-Geh" id="i63-ZR-zrG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-H4-ga8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -57,6 +91,5 @@
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
-        <image name="DreamIcon" width="267.5" height="267.5"/>
     </resources>
 </document>
