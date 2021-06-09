@@ -5,6 +5,7 @@ target 'DreamDream' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 pod 'Charts'
+pod 'Kingfisher', '~> 5.0'
   # Pods for DreamDream
 
 end
