@@ -8,9 +8,6 @@
 import UIKit
 
 class VideoTableViewController: UITableViewController {
-
-    //var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
     
     let video1 = Video(key: "p2fxv3PAtLU", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
     //video1.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
@@ -33,38 +30,7 @@ class VideoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            //self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
-        
-        
         videos = [video1, video2, video3, video4, video5]
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collaped
-        super.viewWillAppear(animated)
-        
-        // Add a background view to the table view
-        let backgroundImage = UIImage(named: "BackGroundImage")
-        let imageView = UIImageView(image: backgroundImage)
-        self.tableView.backgroundView = imageView
-        
-        // no lines where there aren't cells
-        tableView.tableFooterView = UIView(frame: CoreGraphics.CGRectZero)
-        
-        // center and scale background image
-        imageView.contentMode = .scaleAspectFit
-        
-        // Set the background color to match better
-        tableView.backgroundColor = .lightGrayColor()
     }
 
     // MARK: - Table view data source
