@@ -11,7 +11,6 @@
 		34E02E5126581656001F770F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E02E5026581656001F770F /* HealthKit.framework */; };
 		44AD879D493E335A4DA29D9B /* Pods_DreamDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8CC852324B3BE546D0CCFB /* Pods_DreamDream.framework */; };
 		7F2A63CE26412C500074C9F8 /* ContentLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2A63CD26412C500074C9F8 /* ContentLibrary.storyboard */; };
-		7F2A63D526412CE80074C9F8 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A63D426412CE80074C9F8 /* ContentViewController.swift */; };
 		7F2A63D926412D500074C9F8 /* SleepAnalysys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2A63D826412D500074C9F8 /* SleepAnalysys.storyboard */; };
 		7F2A63DC26412D890074C9F8 /* SleepAnalysysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */; };
 		7F2A63DF26412DEF0074C9F8 /* UserSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2A63DE26412DEF0074C9F8 /* UserSetting.storyboard */; };
@@ -24,6 +23,9 @@
 		7F94E783261EFE640006720B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F94E781261EFE640006720B /* LaunchScreen.storyboard */; };
 		7F94E78D261F029C0006720B /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F94E78C261F029C0006720B /* temp.swift */; };
 		7FAC7E80263BF202002C6922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7FAC7E7F263BF202002C6922 /* README.md */; };
+		EDAF902E2670AB2900996A40 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF902D2670AB2900996A40 /* VideoTableViewCell.swift */; };
+		EDAF90302670AB7600996A40 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF902F2670AB7600996A40 /* Video.swift */; };
+		EDAF90362670AFC000996A40 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF90352670AFC000996A40 /* VideoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,6 @@
 		34E02E5026581656001F770F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		530B0C013549473B7B50BF1E /* Pods-DreamDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDream.release.xcconfig"; path = "Target Support Files/Pods-DreamDream/Pods-DreamDream.release.xcconfig"; sourceTree = "<group>"; };
 		7F2A63CD26412C500074C9F8 /* ContentLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentLibrary.storyboard; sourceTree = "<group>"; };
-		7F2A63D426412CE80074C9F8 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		7F2A63D826412D500074C9F8 /* SleepAnalysys.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepAnalysys.storyboard; sourceTree = "<group>"; };
 		7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysysViewController.swift; sourceTree = "<group>"; };
 		7F2A63DE26412DEF0074C9F8 /* UserSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSetting.storyboard; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		7FAC7E7F263BF202002C6922 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C94156615697DF95FA62BDE0 /* Pods-DreamDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDream.debug.xcconfig"; path = "Target Support Files/Pods-DreamDream/Pods-DreamDream.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8CC852324B3BE546D0CCFB /* Pods_DreamDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDAF902D2670AB2900996A40 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		EDAF902F2670AB7600996A40 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EDAF90352670AFC000996A40 /* VideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +122,12 @@
 				34A5FB6E266A15D4008F1889 /* SleepSetting.swift */,
 				7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */,
 				7F2A63CD26412C500074C9F8 /* ContentLibrary.storyboard */,
-				7F2A63D426412CE80074C9F8 /* ContentViewController.swift */,
 				7F94E77F261EFE640006720B /* Assets.xcassets */,
 				7F94E781261EFE640006720B /* LaunchScreen.storyboard */,
 				7F94E784261EFE640006720B /* Info.plist */,
+				EDAF902D2670AB2900996A40 /* VideoTableViewCell.swift */,
+				EDAF902F2670AB7600996A40 /* Video.swift */,
+				EDAF90352670AFC000996A40 /* VideoTableViewController.swift */,
 			);
 			path = AppDevelopment;
 			sourceTree = "<group>";
@@ -244,14 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAF90362670AFC000996A40 /* VideoTableViewController.swift in Sources */,
 				7F2A63DC26412D890074C9F8 /* SleepAnalysysViewController.swift in Sources */,
 				7F94E77B261EFE5F0006720B /* InitialViewController.swift in Sources */,
 				7F94E777261EFE5F0006720B /* AppDelegate.swift in Sources */,
 				7F94E779261EFE5F0006720B /* SceneDelegate.swift in Sources */,
 				34A5FB6F266A15D4008F1889 /* SleepSetting.swift in Sources */,
-				7F2A63D526412CE80074C9F8 /* ContentViewController.swift in Sources */,
 				7F2A63E226412E2E0074C9F8 /* UserSettingViewController.swift in Sources */,
 				7F94E78D261F029C0006720B /* temp.swift in Sources */,
+				EDAF902E2670AB2900996A40 /* VideoTableViewCell.swift in Sources */,
+				EDAF90302670AB7600996A40 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

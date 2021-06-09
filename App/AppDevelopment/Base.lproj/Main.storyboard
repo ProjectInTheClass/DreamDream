@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-sV-Xxe">
-                                <rect key="frame" x="-14" y="11" width="442" height="714"/>
+                                <rect key="frame" x="-10" y="-10" width="434" height="756"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-xD-rK4">
                                 <rect key="frame" x="30" y="170.33333333333334" width="354" height="395.66666666666663"/>
@@ -65,13 +65,13 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1z-xD-rK4" secondAttribute="trailing" constant="30" id="0l2-ym-Nb7"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-34" id="2sl-FC-Got"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmC-aT-V5t"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H79-74-ePE"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ing-Fs-vBM"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxO-dr-1Ec"/>
-                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="Sac-F8-L12"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-10" id="UPH-at-N2H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGD-sV-Xxe" secondAttribute="trailing" constant="-10" id="VN8-pw-BaT"/>
                             <constraint firstItem="d1z-xD-rK4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="eHR-h4-dD1"/>
+                            <constraint firstAttribute="bottom" secondItem="hGD-sV-Xxe" secondAttribute="bottom" constant="-10" id="q03-7w-KHd"/>
+                            <constraint firstItem="hGD-sV-Xxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-10" id="wPD-R8-8hZ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
