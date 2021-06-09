@@ -43,17 +43,19 @@ class SleepAnalysysViewController: UIViewController{
         
 
         self.retrieveSleepAnalysis{ payload, error in
-            DispatchQueue.main.async { [self] in
-              //  print("playload : \(payload)")
-                
-                self.recentSleepStartHourDouble = self.stringTimeToDouble(stringTime: payload)
-                self.wakeUp = self.wakeupTimeCalculation(start: timeChanger(arr: self.recentSleepStartHourDouble) , end: self.resultToSleepAmount)
-                self.setChart(days: self.recentSleepDate.reversed(), sleepTimes:timeChanger(arr: self.recentSleepStartHourDouble.reversed()) , wakeupTimes: self.wakeUp.reversed() )
-    
+            DispatchQueue.main.async {
+                print("payload : \(payload)")
+                if let payload = payload{
+                    
+                    self.recentSleepStartHourDouble = self.stringTimeToDouble(stringTime: payload)!
+                    self.wakeUp = self.wakeupTimeCalculation(start: timeChanger(arr: self.recentSleepStartHourDouble) , end: self.resultToSleepAmount)
+                    print("line 52 .. wakeup :  \(self.wakeUp)")
+                    self.setChart(days: self.recentSleepDate.reversed(), sleepTimes:timeChanger(arr: self.recentSleepStartHourDouble.reversed()) , wakeupTimes: self.wakeUp.reversed() )
+        
 
-                let myProblem = sleepAnalizer(sleepStartTime: self.recentSleepStartHourDouble, timeArr: self.resultToSleepAmount)
-                self.sleepAnalyzeLabel.text = getFeedback(info: myProblem)
-               
+                    let myProblem = sleepAnalizer(sleepStartTime: self.recentSleepStartHourDouble, timeArr: self.resultToSleepAmount)
+                    self.sleepAnalyzeLabel.text = getFeedback(info: myProblem)
+                }
             }
         }
         
@@ -104,6 +106,7 @@ class SleepAnalysysViewController: UIViewController{
             let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 10, sortDescriptors: [sortDescriptor]) { (query, Result, error) -> Void in
                 
                 if error != nil {
+                    print("107번째 라인 오류뜸 nil을 줄건데")
                     completionHandler(nil, error)
                     return
                 }
@@ -143,6 +146,7 @@ class SleepAnalysysViewController: UIViewController{
                                 print("잠든 시간은 몇시몇분? \(sleepStartHour)")
                                 let sleepEndHour = myHourFormatter.string(from: sample.endDate)
                                 self.recentSleepEndHour.append(sleepEndHour)
+                                print("일어난 시간은?? \(sleepEndHour)")
                                 
                                 
                             }
@@ -217,11 +221,14 @@ class SleepAnalysysViewController: UIViewController{
     }
     
     //this function converts times saved in string type to Int type For chart value
-    func stringTimeToDouble(stringTime:[String]!)->[Double]{
+    func stringTimeToDouble(stringTime:[String]?)->[Double]?{
         print("********************\nstring Time to double 함수 진입\n********************")
-
+        if stringTime == nil{
+            print("224 line nil 반환")
+            return nil
+        }
         var returnArray : [Double] = []
-        for i in stringTime{
+        for i in stringTime!{
             let intTime = Int(i)!
             let convertedTime =  (intTime / 100) * 60 + intTime % 100
             let result : Double! = Double(convertedTime) / 60
