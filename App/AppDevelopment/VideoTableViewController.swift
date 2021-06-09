@@ -9,6 +9,19 @@ import UIKit
 
 class VideoTableViewController: UITableViewController {
 
+    //var detailViewController: DetailViewController? = nil
+    var objects = [AnyObject]()
+    
+    let video1 = Video(key: "p2fxv3PAtLU", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
+    //video1.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
+    let video2 = Video(key: "lHn7xv4Zxjg", title: "10시간 당신을 위로하는 수면음악 🎵 스트레스해소음악, 불면증치료음악, 잠잘오는음악, 수면유도음악 (Remember)")
+    //video2.setTitle(title: "10시간 당신을 위로하는 수면음악 🎵 스트레스해소음악, 불면증치료음악, 잠잘오는음악, 수면유도음악 (Remember)")
+    let video3 = Video(key: "gnQcIfUp8Ao", title: "하루의 끝, 편안한 침실에서 듣는 수면음악☁잠잘때 듣는 음악,불면증 치료 음악,수면유도음악")
+    //video3.setTitle(title: "하루의 끝, 편안한 침실에서 듣는 수면음악☁잠잘때 듣는 음악,불면증 치료 음악,수면유도음악")
+    let video4 = Video(key: "QWjVYAJ8bIQ", title: "♥6시간 델타파,미국 수면의학회 추천 수면음악,백색소음,asmr,빗소리,잠오는영상,잠오는 소리,잠오는 클래식,깊은 수면음악,불면증치료,잠오는 노래 ,잠잘오는음악,잠잘오는노래")
+    //video4.setTitle(title: "♥6시간 델타파,미국 수면의학회 추천 수면음악,백색소음,asmr,빗소리,잠오는영상,잠오는 소리,잠오는 클래식,깊은 수면음악,불면증치료,잠오는 노래 ,잠잘오는음악,잠잘오는노래")
+    let video5 = Video(key: "WIqe9vM4U34", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
+    //video5.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
     var videos: [Video] = []
         
     override func viewDidLoad() {
@@ -19,23 +32,39 @@ class VideoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let video1 = Video(key: "p2fxv3PAtLU", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
-        //video1.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
-        videos.append(video1)
-        let video2 = Video(key: "lHn7xv4Zxjg", title: "10시간 당신을 위로하는 수면음악 🎵 스트레스해소음악, 불면증치료음악, 잠잘오는음악, 수면유도음악 (Remember)")
-        //video2.setTitle(title: "10시간 당신을 위로하는 수면음악 🎵 스트레스해소음악, 불면증치료음악, 잠잘오는음악, 수면유도음악 (Remember)")
-        videos.append(video2)
-        let video3 = Video(key: "gnQcIfUp8Ao", title: "하루의 끝, 편안한 침실에서 듣는 수면음악☁잠잘때 듣는 음악,불면증 치료 음악,수면유도음악")
-        //video3.setTitle(title: "하루의 끝, 편안한 침실에서 듣는 수면음악☁잠잘때 듣는 음악,불면증 치료 음악,수면유도음악")
-        videos.append(video3)
-        let video4 = Video(key: "QWjVYAJ8bIQ", title: "♥6시간 델타파,미국 수면의학회 추천 수면음악,백색소음,asmr,빗소리,잠오는영상,잠오는 소리,잠오는 클래식,깊은 수면음악,불면증치료,잠오는 노래 ,잠잘오는음악,잠잘오는노래")
-        //video4.setTitle(title: "♥6시간 델타파,미국 수면의학회 추천 수면음악,백색소음,asmr,빗소리,잠오는영상,잠오는 소리,잠오는 클래식,깊은 수면음악,불면증치료,잠오는 노래 ,잠잘오는음악,잠잘오는노래")
-        videos.append(video4)
-        let video5 = Video(key: "WIqe9vM4U34", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
-        //video5.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
-        videos.append(video5)
 
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: "insertNewObject:")
+        self.navigationItem.rightBarButtonItem = addButton
+        if let split = self.splitViewController {
+            let controllers = split.viewControllers
+            //self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        }
+        
+        
+        videos = [video1, video2, video3, video4, video5]
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collaped
+        super.viewWillAppear(animated)
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "BackGroundImage")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        // no lines where there aren't cells
+        tableView.tableFooterView = UIView(frame: CoreGraphics.CGRectZero)
+        
+        // center and scale background image
+        imageView.contentMode = .scaleAspectFit
+        
+        // Set the background color to match better
+        tableView.backgroundColor = .lightGrayColor()
     }
 
     // MARK: - Table view data source
@@ -47,7 +76,7 @@ class VideoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return videos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
