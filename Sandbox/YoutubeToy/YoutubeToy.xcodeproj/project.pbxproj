@@ -14,6 +14,8 @@
 		EDAF90172668D0C700996A40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF90152668D0C700996A40 /* Main.storyboard */; };
 		EDAF90192668D0CA00996A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAF90182668D0CA00996A40 /* Assets.xcassets */; };
 		EDAF901C2668D0CA00996A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF901A2668D0CA00996A40 /* LaunchScreen.storyboard */; };
+		EDAF9026266A0B4100996A40 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF9025266A0B4100996A40 /* Video.swift */; };
+		EDAF9028266A10E200996A40 /* ContentLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF9027266A10E200996A40 /* ContentLibraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EDAF90182668D0CA00996A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDAF901B2668D0CA00996A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAF901D2668D0CA00996A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDAF9025266A0B4100996A40 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Video.swift; path = ../../../../Video.swift; sourceTree = "<group>"; };
+		EDAF9027266A10E200996A40 /* ContentLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentLibraryViewController.swift; path = ../../../../ContentLibraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +88,11 @@
 				EDAF90112668D0C700996A40 /* SceneDelegate.swift */,
 				EDAF90132668D0C700996A40 /* ViewController.swift */,
 				EDAF90152668D0C700996A40 /* Main.storyboard */,
+				EDAF9027266A10E200996A40 /* ContentLibraryViewController.swift */,
 				EDAF90182668D0CA00996A40 /* Assets.xcassets */,
 				EDAF901A2668D0CA00996A40 /* LaunchScreen.storyboard */,
 				EDAF901D2668D0CA00996A40 /* Info.plist */,
+				EDAF9025266A0B4100996A40 /* Video.swift */,
 			);
 			path = YoutubeToy;
 			sourceTree = "<group>";
@@ -206,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDAF90142668D0C700996A40 /* ViewController.swift in Sources */,
+				EDAF9028266A10E200996A40 /* ContentLibraryViewController.swift in Sources */,
+				EDAF9026266A0B4100996A40 /* Video.swift in Sources */,
 				EDAF90102668D0C700996A40 /* AppDelegate.swift in Sources */,
 				EDAF90122668D0C700996A40 /* SceneDelegate.swift in Sources */,
 			);
