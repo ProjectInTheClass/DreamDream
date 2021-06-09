@@ -10,17 +10,20 @@ import HealthKit
 
 
 var startTime = TimeInterval()
-var timer:Timer = Timer()
+//var timer:Timer = Timer()
 var endTime = Date()
 
 var alarmTime = Date()
 let healthStore = HKHealthStore()
 
-//희망하는 수면시각
+//희망하는 잠자리에 드는 시각
 var timeToSleep: Double = 22 // 디폴트는 밤 10시
 
 //희망하는 수면시각
 var myEnoughSleepTime: Double = 7
+
+//희망하는 기상시각
+var hopeWakeUpTime : String = "아직 입력하지 않았습니다."
 
 func saveSleepAnalysis() {
     // alarmTime and endTime are NSDate objects

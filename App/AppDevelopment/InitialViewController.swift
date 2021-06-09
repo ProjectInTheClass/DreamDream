@@ -8,25 +8,29 @@ import HealthKit
 
 class InitialViewController: UIViewController {
     public var startTime = TimeInterval()
-    public var timer:Timer = Timer()
+    public var timer1:Timer = Timer()
+    public var timer2:Timer = Timer()
+
 //    public var endTime: NSDate!
  //   public var alarmTime: NSDate!
     public let healthStore = HKHealthStore()
     public var buttonflag : Int = 0
     @IBOutlet weak var displayTimeLabel: UILabel!
     
+    @IBOutlet weak var alarmTimeLabel: UILabel!
     @IBOutlet weak var dreamIconButton: UIButton!
     @IBOutlet weak var currentTimeLabel: UILabel!
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getCurrentTime()
+        
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
     }
     private func getCurrentTime() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.currentTime) , userInfo: nil, repeats: true)
+        timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.currentTime) , userInfo: nil, repeats: true)
     }
 
     @objc func currentTime() {
@@ -37,6 +41,7 @@ class InitialViewController: UIViewController {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         if self.buttonflag == 0 {
+            print("start!!")
             start()
             buttonflag = 1
         }else{
@@ -47,9 +52,9 @@ class InitialViewController: UIViewController {
     
     func start(){
         alarmTime = NSDate() as Date
-        if (!timer.isValid) {
+        if (!timer2.isValid) {
             let aSelector : Selector = #selector(InitialViewController.updateTime)
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer2 = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
     }
@@ -58,7 +63,8 @@ class InitialViewController: UIViewController {
     func stop() {
         endTime = NSDate() as Date
         saveSleepAnalysis()
-        timer.invalidate()
+        timer2.invalidate()
+        
      }
     
     
