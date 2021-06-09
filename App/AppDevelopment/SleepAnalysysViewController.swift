@@ -40,7 +40,7 @@ class SleepAnalysysViewController: UIViewController{
         lineChartView.noDataText = "데이터를 불러오는데 실패했습니다."
         lineChartView.noDataFont = .systemFont(ofSize: 20)
         lineChartView.noDataTextColor = .lightGray
-        
+        sleepAnalyzeLabel.text = "데이터가 없습니다."
 
         self.retrieveSleepAnalysis{ payload, error in
             DispatchQueue.main.async {

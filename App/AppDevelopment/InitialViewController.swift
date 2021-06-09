@@ -18,19 +18,23 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var dreamIconButton: UIButton!
     @IBOutlet weak var currentTimeLabel: UILabel!
     override func viewDidLoad() {
-        
 
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "HH:mm:ss"
-        format.locale = Locale(identifier: "ko_KR")
-        let formattedDate = format.string(from: date)
-        currentTimeLabel.text = formattedDate
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getCurrentTime()
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
     }
+    private func getCurrentTime() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.currentTime) , userInfo: nil, repeats: true)
+    }
+
+    @objc func currentTime() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss a"
+        currentTimeLabel.text = formatter.string(from: Date())
+    }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
         if self.buttonflag == 0 {
             start()
