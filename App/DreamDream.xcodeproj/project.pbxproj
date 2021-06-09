@@ -110,26 +110,50 @@
 		7F94E775261EFE5F0006720B /* AppDevelopment */ = {
 			isa = PBXGroup;
 			children = (
+				EDAF903B2671305800996A40 /* Settings */,
+				EDAF903A2671303E00996A40 /* ContentLibrary */,
+				EDAF90392671301200996A40 /* SleepAnalysys */,
+				7F94E77C261EFE5F0006720B /* Main.storyboard */,
 				7F94E776261EFE5F0006720B /* AppDelegate.swift */,
 				7F94E778261EFE5F0006720B /* SceneDelegate.swift */,
 				7F94E77A261EFE5F0006720B /* InitialViewController.swift */,
 				7F94E78C261F029C0006720B /* temp.swift */,
-				7F94E77C261EFE5F0006720B /* Main.storyboard */,
 				34A5FB70266A209F008F1889 /* testPlayground.playground */,
-				7F2A63DE26412DEF0074C9F8 /* UserSetting.storyboard */,
-				7F2A63E126412E2E0074C9F8 /* UserSettingViewController.swift */,
-				7F2A63D826412D500074C9F8 /* SleepAnalysys.storyboard */,
-				34A5FB6E266A15D4008F1889 /* SleepSetting.swift */,
-				7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */,
 				7F94E77F261EFE640006720B /* Assets.xcassets */,
 				7F94E781261EFE640006720B /* LaunchScreen.storyboard */,
 				7F94E784261EFE640006720B /* Info.plist */,
+			);
+			path = AppDevelopment;
+			sourceTree = "<group>";
+		};
+		EDAF90392671301200996A40 /* SleepAnalysys */ = {
+			isa = PBXGroup;
+			children = (
+				7F2A63DB26412D890074C9F8 /* SleepAnalysysViewController.swift */,
+				7F2A63D826412D500074C9F8 /* SleepAnalysys.storyboard */,
+			);
+			path = SleepAnalysys;
+			sourceTree = "<group>";
+		};
+		EDAF903A2671303E00996A40 /* ContentLibrary */ = {
+			isa = PBXGroup;
+			children = (
 				EDAF902D2670AB2900996A40 /* VideoTableViewCell.swift */,
 				EDAF902F2670AB7600996A40 /* Video.swift */,
 				EDAF90352670AFC000996A40 /* VideoTableViewController.swift */,
 				EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */,
 			);
-			path = AppDevelopment;
+			path = ContentLibrary;
+			sourceTree = "<group>";
+		};
+		EDAF903B2671305800996A40 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7F2A63DE26412DEF0074C9F8 /* UserSetting.storyboard */,
+				7F2A63E126412E2E0074C9F8 /* UserSettingViewController.swift */,
+				34A5FB6E266A15D4008F1889 /* SleepSetting.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
