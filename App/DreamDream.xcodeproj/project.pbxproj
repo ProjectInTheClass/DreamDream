@@ -27,6 +27,7 @@
 		EDAF903826712DDA00996A40 /* ContentLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */; };
 		EDAF903D2671349700996A40 /* ContentLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */; };
 		EDAF90412671548300996A40 /* AddEditVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */; };
+		EDAF90432671A29F00996A40 /* videoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF90422671A29F00996A40 /* videoWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentLibrary.storyboard; sourceTree = "<group>"; };
 		EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLibraryViewController.swift; sourceTree = "<group>"; };
 		EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditVideoTableViewController.swift; sourceTree = "<group>"; };
+		EDAF90422671A29F00996A40 /* videoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				EDAF903726712DDA00996A40 /* ContentLibrary.storyboard */,
 				EDAF903C2671349700996A40 /* ContentLibraryViewController.swift */,
 				EDAF90402671548300996A40 /* AddEditVideoTableViewController.swift */,
+				EDAF90422671A29F00996A40 /* videoWebViewController.swift */,
 			);
 			path = ContentLibrary;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				7F94E78D261F029C0006720B /* temp.swift in Sources */,
 				EDAF902E2670AB2900996A40 /* VideoTableViewCell.swift in Sources */,
 				EDAF90302670AB7600996A40 /* Video.swift in Sources */,
+				EDAF90432671A29F00996A40 /* videoWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

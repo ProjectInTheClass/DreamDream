@@ -19,7 +19,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-Nb-QIB">
                                 <rect key="frame" x="-10" y="0.0" width="434" height="757"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t1J-C5-3lQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t1J-C5-3lQ">
                                 <rect key="frame" x="0.0" y="64" width="414" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,11 +107,60 @@
                     <connections>
                         <outlet property="editButton" destination="FEz-ge-f5E" id="u1c-Ll-R64"/>
                         <outlet property="videoTable" destination="t1J-C5-3lQ" id="apt-fr-owZ"/>
+                        <segue destination="pLW-xg-FSX" kind="show" identifier="videoSegue" id="nPW-wO-tUY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.86956521739131" y="196.46739130434784"/>
+        </scene>
+        <!--Video Web View Controller-->
+        <scene sceneID="CZr-sL-2WB">
+            <objects>
+                <viewController id="pLW-xg-FSX" customClass="videoWebViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UnC-lJ-dKI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-Y7-Pme">
+                                <rect key="frame" x="20" y="20" width="38" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="66C-ce-mq4" kind="unwind" unwindAction="unwindToContentLibraryView:" id="h46-H8-h68"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQU-rZ-teV">
+                                <rect key="frame" x="15" y="83" width="384" height="240"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="iYN-MZ-b7P"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ke6-PR-Z1T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RQU-rZ-teV" firstAttribute="leading" secondItem="ke6-PR-Z1T" secondAttribute="leading" constant="15" id="EX7-Br-A4Y"/>
+                            <constraint firstItem="c9N-Y7-Pme" firstAttribute="leading" secondItem="ke6-PR-Z1T" secondAttribute="leading" constant="20" id="Pom-gJ-oj7"/>
+                            <constraint firstItem="RQU-rZ-teV" firstAttribute="top" secondItem="c9N-Y7-Pme" secondAttribute="bottom" constant="30" id="dTf-Yz-Gle"/>
+                            <constraint firstItem="ke6-PR-Z1T" firstAttribute="trailing" secondItem="RQU-rZ-teV" secondAttribute="trailing" constant="15" id="pbV-i6-oEc"/>
+                            <constraint firstItem="c9N-Y7-Pme" firstAttribute="top" secondItem="ke6-PR-Z1T" secondAttribute="top" constant="20" id="qcW-AX-hPb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p0o-NJ-ddC"/>
+                    <connections>
+                        <outlet property="webView" destination="RQU-rZ-teV" id="Y7P-gx-c3I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAP-Sl-nhS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="66C-ce-mq4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="516"/>
         </scene>
         <!--컨텐츠 추가 / 수정-->
         <scene sceneID="gR3-FW-TpA">

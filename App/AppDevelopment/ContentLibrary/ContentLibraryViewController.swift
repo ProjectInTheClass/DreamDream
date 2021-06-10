@@ -33,6 +33,8 @@ class ContentLibraryViewController: UIViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 
+        overrideUserInterfaceStyle = .dark
+        
         videos = [video1, video2, video3, video4, video5]
         
         videoTable.backgroundColor = UIColor.clear
@@ -61,6 +63,10 @@ class ContentLibraryViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "addVideo" { return }
+        if segue.identifier == "videoSegue" {
+            let destinationViewController = segue.destination as! videoWebViewController
+            destinationViewController.video = sender as? Video
+        }
     }
     
 }
@@ -93,6 +99,18 @@ extension ContentLibraryViewController : UITableViewDelegate, UITableViewDataSou
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedItem = videos.remove(at: sourceIndexPath.row)
+        videos.insert(movedItem, at: destinationIndexPath.row)
+        videoTable.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("##### Select \(indexPath.row)th cell! #####")
+        let selectedItem = videos[indexPath.row]
+        performSegue(withIdentifier: "videoSegue", sender: selectedItem)
     }
     
     @IBAction func editTable(_ sender: Any) {
