@@ -10,6 +10,7 @@ import UIKit
 class ContentLibraryViewController: UIViewController {
     
     @IBOutlet weak var videoTable: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     let video1 = Video(key: "p2fxv3PAtLU", title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
     //video1.setTitle(title: "10시간 잔잔한 수면음악 🎵 스트레스 해소음악, 잠잘때 듣는 음악, 불면증치료음악, 수면유도음악 (My Dream)")
@@ -37,6 +38,31 @@ class ContentLibraryViewController: UIViewController {
         videoTable.backgroundColor = UIColor.clear
         
     }
+    
+    
+    // MARK: - Navigation
+    
+    @IBAction func unwindToContentLibraryView(_ unwindSegue: UIStoryboardSegue) {
+        // Use data from the view controller which initiated the unwind segue
+        guard unwindSegue.identifier == "saveUnwind", let sourceViewController = unwindSegue.source as? AddEditVideoTableViewController, let video = sourceViewController.video else { return }
+        
+        if let selectedIndexPath = videoTable.indexPathForSelectedRow {
+            videos[selectedIndexPath.row] = video
+            videoTable.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            let newIndexPath = IndexPath(row: videos.count, section: 0)
+            videos.append(video)
+            videoTable.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "addVideo" { return }
+    }
+    
 }
     
 extension ContentLibraryViewController : UITableViewDelegate, UITableViewDataSource {
@@ -55,16 +81,29 @@ extension ContentLibraryViewController : UITableViewDelegate, UITableViewDataSou
         cell.showsReorderControl = true
         return cell
     }
-}
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
-    */
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            videos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    @IBAction func editTable(_ sender: Any) {
+        if self.videoTable.isEditing {
+            self.editButton.title = "Edit"
+            self.videoTable.setEditing(false, animated: true)
+        } else {
+            self.editButton.title = "Done"
+            self.videoTable.setEditing(true, animated: true)
+        }
+    }
+    
+}
 

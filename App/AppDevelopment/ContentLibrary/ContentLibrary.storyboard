@@ -20,19 +20,19 @@
                                 <rect key="frame" x="-10" y="0.0" width="434" height="757"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t1J-C5-3lQ">
-                                <rect key="frame" x="10" y="64" width="394" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" id="ai9-bc-n7Z" customClass="VideoTableViewCell" customModule="DreamDream" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="394" height="120"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ai9-bc-n7Z" id="0B6-Ce-I0r">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-Qc-XVw">
-                                                    <rect key="frame" x="0.0" y="5" width="394" height="110"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="110"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-jy-MG4">
                                                             <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
@@ -48,8 +48,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dXM-Qc-XVw" firstAttribute="top" secondItem="0B6-Ce-I0r" secondAttribute="top" constant="5" id="146-g0-eFU"/>
-                                                <constraint firstAttribute="trailing" secondItem="dXM-Qc-XVw" secondAttribute="trailing" id="853-xT-R5h"/>
-                                                <constraint firstItem="dXM-Qc-XVw" firstAttribute="leading" secondItem="0B6-Ce-I0r" secondAttribute="leading" id="CU1-gA-uqK"/>
+                                                <constraint firstAttribute="trailing" secondItem="dXM-Qc-XVw" secondAttribute="trailing" constant="10" id="853-xT-R5h"/>
+                                                <constraint firstItem="dXM-Qc-XVw" firstAttribute="leading" secondItem="0B6-Ce-I0r" secondAttribute="leading" constant="10" id="CU1-gA-uqK"/>
                                                 <constraint firstAttribute="bottom" secondItem="dXM-Qc-XVw" secondAttribute="bottom" constant="5" id="WRK-f6-DjM"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -72,10 +72,14 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="컨텐츠 라이브러리" id="BYU-OY-q7b">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="FEz-ge-f5E"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="FEz-ge-f5E">
+                                            <connections>
+                                                <action selector="editTable:" destination="Y6W-OH-hqX" id="Q6b-va-r8p"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CQa-JN-F1I">
                                             <connections>
-                                                <segue destination="80J-fY-s1n" kind="presentation" id="3iP-h5-o8d"/>
+                                                <segue destination="80J-fY-s1n" kind="presentation" identifier="addVideo" id="3iP-h5-o8d"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -89,8 +93,8 @@
                             <constraint firstAttribute="bottomMargin" secondItem="gRj-Nb-QIB" secondAttribute="bottom" constant="-70" id="7Mw-C8-gum"/>
                             <constraint firstItem="2BM-NW-gbg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GUs-pC-qVz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="t1J-C5-3lQ" secondAttribute="bottom" constant="20" id="HZk-C6-gYk"/>
-                            <constraint firstItem="t1J-C5-3lQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="N8T-LD-MuX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="t1J-C5-3lQ" secondAttribute="trailing" constant="10" id="RoV-HN-HPF"/>
+                            <constraint firstItem="t1J-C5-3lQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="N8T-LD-MuX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="t1J-C5-3lQ" secondAttribute="trailing" id="RoV-HN-HPF"/>
                             <constraint firstItem="2BM-NW-gbg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="amX-PW-Kxu"/>
                             <constraint firstItem="t1J-C5-3lQ" firstAttribute="top" secondItem="2BM-NW-gbg" secondAttribute="bottom" constant="20" id="k9I-a6-TO7"/>
                             <constraint firstItem="gRj-Nb-QIB" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="-30" id="lBI-yL-Z9v"/>
@@ -101,6 +105,7 @@
                     <tabBarItem key="tabBarItem" title="컨텐츠" id="POG-A8-M76"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="FEz-ge-f5E" id="u1c-Ll-R64"/>
                         <outlet property="videoTable" destination="t1J-C5-3lQ" id="apt-fr-owZ"/>
                     </connections>
                 </viewController>
@@ -108,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="160.86956521739131" y="196.46739130434784"/>
         </scene>
-        <!--Root View Controller-->
+        <!--컨텐츠 추가 / 수정-->
         <scene sceneID="gR3-FW-TpA">
             <objects>
                 <tableViewController id="gVM-Yv-NA4" customClass="AddEditVideoTableViewController" customModule="DreamDream" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,6 +135,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="gVM-Yv-NA4" eventType="editingChanged" id="gla-27-iw3"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -155,6 +163,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="gVM-Yv-NA4" eventType="editingChanged" id="Z4b-qa-rNd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -180,6 +191,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="gVM-Yv-NA4" eventType="editingChanged" id="686-hO-iVc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -198,9 +212,27 @@
                             <outlet property="delegate" destination="gVM-Yv-NA4" id="CPV-T2-o0h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="CYV-uB-TCa"/>
+                    <navigationItem key="navigationItem" title="컨텐츠 추가 / 수정" id="CYV-uB-TCa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pVw-SP-iqk">
+                            <connections>
+                                <segue destination="d18-fC-LdX" kind="unwind" unwindAction="unwindToContentLibraryView:" id="X51-08-2sd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="scc-fD-WAI">
+                            <connections>
+                                <segue destination="d18-fC-LdX" kind="unwind" identifier="saveUnwind" unwindAction="unwindToContentLibraryView:" id="D8O-uN-SYh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="keyTextField" destination="jpq-GC-2vD" id="l8s-UK-dab"/>
+                        <outlet property="memoTextField" destination="NmO-sC-whi" id="ZL0-y0-rdU"/>
+                        <outlet property="saveButton" destination="scc-fD-WAI" id="ksY-zv-a9N"/>
+                        <outlet property="titleTextField" destination="xK5-AI-1f2" id="EyJ-RF-4pz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bM6-Eq-zhz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d18-fC-LdX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1719" y="-177"/>
         </scene>
