@@ -71,7 +71,7 @@
                             <constraint firstItem="Wqo-9Q-HQG" firstAttribute="top" secondItem="moq-dB-Xgc" secondAttribute="top" constant="50" id="yog-Gn-VJd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="수면분석" springLoaded="YES" id="gwQ-Uy-Rs7" userLabel="수면분석"/>
+                    <tabBarItem key="tabBarItem" title="수면분석" image="powersleep" catalog="system" springLoaded="YES" id="gwQ-Uy-Rs7" userLabel="수면분석"/>
                     <connections>
                         <outlet property="lineChartView" destination="wMu-eP-b13" id="ly5-dR-hx9"/>
                         <outlet property="sleepAnalyzeLabel" destination="a9v-Fd-Oxz" id="sZM-j1-MUg"/>
@@ -84,6 +84,7 @@
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
+        <image name="powersleep" catalog="system" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

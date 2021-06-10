@@ -102,7 +102,7 @@
                             <constraint firstItem="2BM-NW-gbg" firstAttribute="centerX" secondItem="t1J-C5-3lQ" secondAttribute="centerX" id="rcX-fX-n43"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="컨텐츠" id="POG-A8-M76"/>
+                    <tabBarItem key="tabBarItem" title="컨텐츠" image="tray.fill" catalog="system" id="POG-A8-M76"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editButton" destination="FEz-ge-f5E" id="u1c-Ll-R64"/>
@@ -304,6 +304,7 @@
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
+        <image name="tray.fill" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -88,7 +88,9 @@
                             <outletCollection property="gestureRecognizers" destination="Uti-Mf-7y9" appends="YES" id="pmx-g5-kft"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈화면" id="ki8-cd-JUk"/>
+                    <tabBarItem key="tabBarItem" title="홈화면" image="house.fill" catalog="system" id="ki8-cd-JUk">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="6e4-zn-x98"/>
                     <connections>
                         <outlet property="alarmTimeLabel" destination="VNT-ds-3ch" id="yZd-Ux-TPD"/>
@@ -123,7 +125,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="BackGroundImage" id="gCo-tn-EzR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="opaqueSeparatorColor"/>
                     </tabBar>
                     <connections>
@@ -161,6 +163,7 @@
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
         <image name="DreamIcon" width="178.33332824707031" height="178.33332824707031"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

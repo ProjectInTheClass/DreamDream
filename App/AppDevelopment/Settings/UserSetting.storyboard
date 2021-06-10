@@ -79,7 +79,7 @@
                             <constraint firstItem="blj-iY-Qoi" firstAttribute="centerX" secondItem="9u4-2P-jX3" secondAttribute="centerX" id="oEr-jW-2ik"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="사용자 설정" id="5AQ-xh-bmJ" userLabel="설정"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="sunset.fill" catalog="system" id="5AQ-xh-bmJ" userLabel="설정"/>
                     <navigationItem key="navigationItem" title="Title" id="U6o-sP-Whm"/>
                     <connections>
                         <outlet property="hopeSleepingHourInputField" destination="dhT-L3-Vmi" id="8bh-6b-vWo"/>
@@ -93,5 +93,6 @@
     </scenes>
     <resources>
         <image name="BackGroundImage" width="270" height="480"/>
+        <image name="sunset.fill" catalog="system" width="128" height="97"/>
     </resources>
 </document>
